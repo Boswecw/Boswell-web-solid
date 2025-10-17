@@ -52,9 +52,13 @@ export default function AboutPage() {
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <img
-                    src="https://storage.googleapis.com/boswellwebdevsolutionsllc/75C2B6B4-7539-4C70-BB2E-D97E39E038D5.JPG"
-                    alt="Charles Boswell"
+                    src="/images/CharlesBoswellsm.webp"
+                    alt="Charles Boswell - Founder & CEO"
                     class="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
+                    width="400"
+                    height="500"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
                 <div>
