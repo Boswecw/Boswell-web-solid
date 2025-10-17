@@ -7,12 +7,22 @@ const root = document.getElementById('root')
 
 render(() => <App />, root!)
 
-// Service worker disabled for now - causing performance issues in Lighthouse
-// Re-enable after optimizing caching strategy
-// if ('serviceWorker' in navigator) {
-//   window.addEventListener('load', () => {
-//     navigator.serviceWorker.register('/sw.js').catch(() => {
-//       // Service worker registration failed, app will still work
-//     })
-//   })
-// }
+// Unregister all service workers and clear caches
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    registrations.forEach((registration) => {
+      registration.unregister();
+      console.log('Service worker unregistered');
+    });
+  });
+
+  // Clear all caches
+  if ('caches' in window) {
+    caches.keys().then((cacheNames) => {
+      cacheNames.forEach((cacheName) => {
+        caches.delete(cacheName);
+        console.log('Cache deleted:', cacheName);
+      });
+    });
+  }
+}
