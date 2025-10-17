@@ -1,32 +1,62 @@
-// minimal SW: takes control immediately and caches a few shell files
+// Service Worker - Network first strategy with proper error handling
+const CACHE_NAME = 'app-shell-v2';
+
 self.addEventListener('install', (event) => {
   self.skipWaiting();
-  event.waitUntil(
-    caches.open('app-shell-v1').then((cache) =>
-      cache.addAll([
-        '/',            // important: control start_url
-        '/index.html',
-        '/manifest.webmanifest'
-        // you can add CSS/JS build paths here if they’re static (e.g., /assets/main-xxxxx.js)
-      ])
-    )
-  );
+  // Don't cache anything on install - let network handle it
+  event.waitUntil(Promise.resolve());
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim()); // take control of existing clients
+  // Clean up old caches
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+  event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  // network-first for navigation; cache-first for others
-  if (request.mode === 'navigate') {
-    event.respondWith(
-      fetch(request).catch(() => caches.match('/index.html'))
-    );
-  } else {
-    event.respondWith(
-      caches.match(request).then((cached) => cached || fetch(request))
-    );
-  }
+  
+  // Network-first strategy with proper fallback
+  event.respondWith(
+    fetch(request)
+      .then((response) => {
+        // Only cache successful responses
+        if (response && response.status === 200) {
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(request, responseToCache);
+          });
+        }
+        return response;
+      })
+      .catch(() => {
+        // Try cache on network failure
+        return caches.match(request).then((cached) => {
+          if (cached) {
+            return cached;
+          }
+          // Fallback for navigation requests
+          if (request.mode === 'navigate') {
+            return caches.match('/index.html');
+          }
+          return new Response('Offline - resource not available', {
+            status: 503,
+            statusText: 'Service Unavailable',
+            headers: new Headers({
+              'Content-Type': 'text/plain'
+            })
+          });
+        });
+      })
+  );
 });
