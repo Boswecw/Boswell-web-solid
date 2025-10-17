@@ -1,0 +1,208 @@
+import { For } from 'solid-js'
+import Navbar from '../components/Navbar'
+import SEOHead from '../components/SEOHead'
+import LinkButton from '../components/LinkButton'
+
+const services = [
+  {
+    id: "starter",
+    title: "Starter Website",
+    blurb: "A clean, fast, custom-coded site for portfolios and small businesses.",
+    price: "$900 – $1,500",
+    timeline: "1–2 weeks",
+    bullets: [
+      "Built with React or SvelteKit — no generic templates",
+      "Fully responsive and accessible (WCAG 2.1)",
+      "Contact form + foundational SEO",
+      "Deployed with performance best practices",
+    ],
+  },
+  {
+    id: "business",
+    title: "Business Website",
+    blurb: "Marketing site with content tools, integrations, and room to grow.",
+    price: "$1,800 – $3,500",
+    timeline: "2–3 weeks",
+    bullets: [
+      "CMS/admin for easy updates",
+      "Advanced forms & analytics",
+      "Optimized for performance and SEO",
+      "Google Maps & Workspace integration",
+    ],
+  },
+  {
+    id: "ecommerce",
+    title: "eCommerce Website",
+    blurb: "Modern storefront with secure checkout, inventory, and order management.",
+    price: "$3,000 – $6,000+",
+    timeline: "3–5 weeks",
+    bullets: [
+      "Stripe/PayPal integration",
+      "Product catalog & order management",
+      "Customer accounts & email receipts",
+      "Admin dashboard for inventory",
+    ],
+  },
+  {
+    id: "custom",
+    title: "Custom Web App",
+    blurb: "Bespoke applications, dashboards, and automation tailored to your operations.",
+    price: "Custom Quote",
+    timeline: "Scoped per project",
+    bullets: [
+      "React front-end + Node/Express APIs",
+      "Authentication & role-based access",
+      "Database design & optimization",
+      "Scalable, testable architecture",
+    ],
+  },
+]
+
+export default function ServicesPage() {
+  return (
+    <>
+      <SEOHead
+        title="Services | Boswell Digital Solutions LLC"
+        description="Custom web development services including starter websites, business sites, eCommerce platforms, and custom web applications. Veteran-owned in Lexington, KY."
+        keywords="web development services, custom websites, ecommerce development, react development, lexington ky"
+        url="https://boswelldigitalsolutions.com/services"
+      />
+
+      <div class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
+        <Navbar />
+        
+        <div class="pt-24 p-6">
+          <div class="max-w-7xl mx-auto">
+            <LinkButton href="/" variant="ghost" class="mb-6">
+              ← Back to Home
+            </LinkButton>
+
+            <div class="text-center mb-12">
+              <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-clip-text text-transparent mb-4">
+                Our Services
+              </h1>
+              <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Custom digital solutions designed to solve real problems and deliver measurable results
+              </p>
+            </div>
+
+            {/* Services Grid */}
+            <section class="mb-16">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <For each={services}>
+                  {(service) => (
+                    <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                      <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">{service.title}</h3>
+                        <div class="text-right">
+                          <div class="text-2xl font-bold text-blue-400">{service.price}</div>
+                          <div class="text-sm text-gray-400">{service.timeline}</div>
+                        </div>
+                      </div>
+                      
+                      <p class="text-gray-300 mb-6">{service.blurb}</p>
+                      
+                      <ul class="space-y-3 mb-6">
+                        <For each={service.bullets}>
+                          {(bullet) => (
+                            <li class="flex items-start gap-3">
+                              <span class="text-green-400 mt-1">✓</span>
+                              <span class="text-gray-300">{bullet}</span>
+                            </li>
+                          )}
+                        </For>
+                      </ul>
+                      
+                      <LinkButton href="/contact" class="w-full">
+                        Get Started →
+                      </LinkButton>
+                    </div>
+                  )}
+                </For>
+              </div>
+            </section>
+
+            {/* Process Section */}
+            <section class="mb-16">
+              <h2 class="text-3xl font-bold text-center text-blue-400 mb-12">
+                Our Process
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                  <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+                  <h3 class="text-xl font-bold mb-2">Discover</h3>
+                  <p class="text-gray-300">We learn about your goals, audience, and requirements</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+                  <h3 class="text-xl font-bold mb-2">Plan</h3>
+                  <p class="text-gray-300">Create detailed wireframes and technical specifications</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+                  <h3 class="text-xl font-bold mb-2">Build</h3>
+                  <p class="text-gray-300">Develop your solution with regular updates and feedback</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
+                  <h3 class="text-xl font-bold mb-2">Launch</h3>
+                  <p class="text-gray-300">Deploy, test, and provide ongoing support</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Why Choose Us */}
+            <section class="mb-16">
+              <h2 class="text-3xl font-bold text-center text-blue-400 mb-12">
+                Why Choose Boswell Digital Solutions?
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                  <div class="text-blue-400 text-4xl mb-4">🎖️</div>
+                  <h3 class="text-xl font-bold mb-3">Veteran-Owned</h3>
+                  <p class="text-gray-300">
+                    Military precision and reliability in every project. Clear communication and dependable delivery.
+                  </p>
+                </div>
+                <div class="text-center">
+                  <div class="text-blue-400 text-4xl mb-4">🚀</div>
+                  <h3 class="text-xl font-bold mb-3">Modern Technology</h3>
+                  <p class="text-gray-300">
+                    Built with the latest frameworks and best practices for performance, security, and scalability.
+                  </p>
+                </div>
+                <div class="text-center">
+                  <div class="text-blue-400 text-4xl mb-4">📍</div>
+                  <h3 class="text-xl font-bold mb-3">Local to Kentucky</h3>
+                  <p class="text-gray-300">
+                    Based in Lexington, KY. Available for in-person meetings and supporting local businesses.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* CTA Section */}
+            <section class="text-center">
+              <div class="bg-blue-900/20 rounded-2xl p-8 border border-blue-500/30">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                  Ready to Get Started?
+                </h3>
+                <p class="text-gray-300 mb-6">
+                  Let's discuss your project and create a custom solution that drives real results.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                  <LinkButton href="/contact" size="lg">
+                    Start Your Project →
+                  </LinkButton>
+                  <LinkButton href="/portfolio" variant="outline" size="lg">
+                    View Our Work
+                  </LinkButton>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
