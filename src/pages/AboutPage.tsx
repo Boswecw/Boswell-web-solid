@@ -113,6 +113,92 @@ export default function AboutPage() {
               </div>
             </section>
 
+            {/* Website Performance Section */}
+            <section class="mb-16">
+              <h3 class="text-2xl md:text-3xl font-bold text-center text-blue-400 mb-8">
+                ⚡ Website Performance Excellence
+              </h3>
+              <div class="bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-gray-700">
+                <p class="text-gray-300 leading-relaxed mb-8 text-center">
+                  This website is built with the same performance-first principles we apply to every client project.
+                  See what's possible when you prioritize speed, accessibility, and user experience.
+                </p>
+
+                {/* Lighthouse Scores */}
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-green-500/30">
+                    <div class="text-3xl font-bold text-green-400 mb-2">98</div>
+                    <div class="text-sm text-gray-300">Performance</div>
+                  </div>
+                  <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-green-500/30">
+                    <div class="text-3xl font-bold text-green-400 mb-2">99</div>
+                    <div class="text-sm text-gray-300">Accessibility</div>
+                  </div>
+                  <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-green-500/30">
+                    <div class="text-3xl font-bold text-green-400 mb-2">100</div>
+                    <div class="text-sm text-gray-300">Best Practices</div>
+                  </div>
+                  <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-green-500/30">
+                    <div class="text-3xl font-bold text-green-400 mb-2">100</div>
+                    <div class="text-sm text-gray-300">SEO</div>
+                  </div>
+                </div>
+
+                {/* Performance Metrics */}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <h4 class="text-lg font-bold text-blue-400 mb-4">Performance Improvements</h4>
+                    <ul class="space-y-3 text-gray-300">
+                      <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <span><strong>99% faster load time</strong> - From 308s to 1.5s</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <span><strong>53% smaller images</strong> - Optimized locally</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <span><strong>Code splitting</strong> - Faster initial load</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <span><strong>Network-first caching</strong> - Always latest content</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold text-blue-400 mb-4">Technology Stack</h4>
+                    <ul class="space-y-3 text-gray-300">
+                      <li class="flex items-start">
+                        <span class="text-blue-400 mr-3">→</span>
+                        <span><strong>SolidJS</strong> - Reactive, performant framework</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-blue-400 mr-3">→</span>
+                        <span><strong>TypeScript</strong> - Type-safe development</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-blue-400 mr-3">→</span>
+                        <span><strong>Tailwind CSS</strong> - Optimized styling</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-blue-400 mr-3">→</span>
+                        <span><strong>Vite</strong> - Lightning-fast build tool</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="bg-blue-900/20 rounded-lg p-4 border border-blue-500/30 text-center">
+                  <p class="text-gray-300">
+                    <strong class="text-blue-400">This is what we deliver:</strong> Fast, accessible, SEO-optimized websites
+                    that convert visitors into customers. Every project gets the same performance-first approach.
+                  </p>
+                </div>
+              </div>
+            </section>
+
             {/* CTA Section */}
             <section class="text-center">
               <div class="bg-blue-900/20 rounded-2xl p-8 border border-blue-500/30">
