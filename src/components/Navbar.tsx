@@ -22,12 +22,13 @@ export default function Navbar() {
           <div class="flex-shrink-0 hover:scale-105 transition-transform">
             <A href="/" class="flex items-center gap-2">
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/endless-fire-467204-n2.firebasestorage.app/o/siglogo.webp?alt=media&token=43e15d27-e6fa-4fa0-b7c4-2972b1c1d03a"
+                src="/logo.webp"
                 alt="Boswell Digital Solutions"
                 class="h-9 w-auto select-none"
                 width="180"
                 height="36"
                 loading="eager"
+                decoding="async"
               />
               <span class="sr-only">Boswell Digital Solutions</span>
             </A>

@@ -1,11 +1,13 @@
-import { JSX, splitProps } from 'solid-js'
+import { splitProps } from 'solid-js'
 import { A } from '@solidjs/router'
 
-interface LinkButtonProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface LinkButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   href: string
-  children: JSX.Element
+  children?: any
+  class?: string
+  [key: string]: any
 }
 
 /**

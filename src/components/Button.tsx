@@ -1,9 +1,14 @@
-import { JSX, splitProps } from 'solid-js'
+import { splitProps } from 'solid-js'
 
-interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
-  children: JSX.Element
+  children?: any
+  class?: string
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
+  onClick?: (e: MouseEvent) => void
+  [key: string]: any
 }
 
 /**

@@ -8,19 +8,19 @@ const featuredProjects = [
     title: "AI Biz Starter Template",
     description: "Full-stack SvelteKit + FastAPI template with AI chatbot integration and business automation tools",
     tech: "SvelteKit • FastAPI • LangChain",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    image: "/images/ai-biz-starter.jpg",
   },
   {
     title: "FurBabies Pet Store",
     description: "Modern eCommerce platform with inventory management, customer accounts, and secure checkout",
     tech: "React • Node.js • Stripe",
-    image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop",
+    image: "/images/furbabies-store.jpg",
   },
   {
     title: "Leopold Nature Tracker",
     description: "Advanced nature observation app with TensorFlow audio classification and cloud data management",
     tech: "React • TensorFlow.js • Firebase",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop",
+    image: "/images/leopold-tracker.jpg",
   },
 ]
 
@@ -28,9 +28,9 @@ export default function LandingPage() {
   return (
     <>
       <SEOHead
-        title="Boswell Digital Solutions LLC | Veteran-Owned Web Development & AI Studio"
-        description="Veteran-owned digital solutions company in Lexington, KY. Custom React websites, AI integration, and business automation. Starting at $750."
-        keywords="digital solutions lexington ky, react developer kentucky, veteran owned business, custom websites, AI integration, MERN stack, web design lexington"
+        title="Boswell Digital Solutions LLC | Web Development, Applications & AI Studio"
+        description="Veteran-owned digital solutions company in Lexington, KY. Custom websites, web applications, mobile apps, AI integration, and business automation. Starting at $750."
+        keywords="digital solutions lexington ky, react developer kentucky, web applications, mobile apps, veteran owned business, custom websites, AI integration, MERN stack, web design lexington"
         url="https://boswelldigitalsolutions.com"
       />
 
@@ -45,10 +45,10 @@ export default function LandingPage() {
                 Boswell Digital Solutions LLC
               </h1>
               <p class="text-xl md:text-2xl text-gray-300 mb-4">
-                Veteran-Owned & AI-Powered Development Studio
+                Veteran-Owned Web & Application Development Studio
               </p>
               <p class="text-lg text-gray-400 max-w-3xl mx-auto">
-                Custom React websites, business process automation, and intelligent tools 
+                Custom websites, web applications, mobile apps, business process automation, and intelligent tools
                 that help small businesses and mission-driven teams reach their goals with measurable results.
               </p>
             </div>
@@ -77,26 +77,33 @@ export default function LandingPage() {
               Digital Solutions That <span class="text-blue-400">Deliver Results</span>
             </h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
                 <div class="text-blue-400 text-3xl mb-4">🚀</div>
                 <h3 class="text-xl font-bold mb-3">Starter Websites</h3>
                 <p class="text-gray-300 mb-4">Clean, fast, custom-coded sites for portfolios and small businesses.</p>
                 <p class="text-blue-400 font-semibold">$900 – $1,500</p>
               </div>
-              
+
               <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
                 <div class="text-blue-400 text-3xl mb-4">🏢</div>
                 <h3 class="text-xl font-bold mb-3">Business Websites</h3>
                 <p class="text-gray-300 mb-4">Marketing sites with content tools, integrations, and room to grow.</p>
                 <p class="text-blue-400 font-semibold">$1,800 – $3,500</p>
               </div>
-              
+
               <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
                 <div class="text-blue-400 text-3xl mb-4">🛒</div>
                 <h3 class="text-xl font-bold mb-3">eCommerce</h3>
                 <p class="text-gray-300 mb-4">Modern storefronts with secure checkout and inventory management.</p>
                 <p class="text-blue-400 font-semibold">$3,000 – $6,000+</p>
+              </div>
+
+              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div class="text-blue-400 text-3xl mb-4">⚙️</div>
+                <h3 class="text-xl font-bold mb-3">Web & Mobile Apps</h3>
+                <p class="text-gray-300 mb-4">Custom applications with real-time features, databases, and scalability.</p>
+                <p class="text-blue-400 font-semibold">$2,500 – $8,000+</p>
               </div>
             </div>
             
@@ -119,10 +126,14 @@ export default function LandingPage() {
               <For each={featuredProjects}>
                 {(project) => (
                   <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                    <img 
-                      src={project.image} 
+                    <img
+                      src={project.image}
                       alt={project.title}
                       class="w-full h-48 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="400"
                     />
                     <div class="p-6">
                       <h3 class="text-xl font-bold mb-2">{project.title}</h3>
