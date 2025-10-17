@@ -294,6 +294,20 @@ export default function ContactPage() {
 
                   <div>
                     <label class="block text-white text-sm font-semibold mb-2">
+                      Company (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData().company}
+                      onInput={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
+                      class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-400"
+                      placeholder="Your company name"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="block text-white text-sm font-semibold mb-2">
                       Project Details
                     </label>
                     <textarea
@@ -305,6 +319,14 @@ export default function ContactPage() {
                       placeholder="Tell me about your goals, target audience, pages/features needed..."
                     />
                   </div>
+
+                  {/* Hidden fields for package data */}
+                  <input type="hidden" name="selectedPackageId" value={selectedPackage()} />
+                  <input type="hidden" name="selectedPackageName" value={packages.find(p => p.id === selectedPackage())?.name || ""} />
+                  <input type="hidden" name="selectedPackagePrice" value={packages.find(p => p.id === selectedPackage())?.price || ""} />
+                  <input type="hidden" name="projectType" value={formData().projectType} />
+                  <input type="hidden" name="budget" value={formData().budget} />
+                  <input type="hidden" name="timeline" value={formData().timeline} />
 
                   <Button
                     type="submit"
