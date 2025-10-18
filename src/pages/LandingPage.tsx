@@ -9,18 +9,21 @@ const featuredProjects = [
     description: "Full-stack SvelteKit + FastAPI template with AI chatbot integration and business automation tools",
     tech: "SvelteKit • FastAPI • LangChain",
     image: "/images/ai-biz-starter.jpg",
+    altText: "AI Biz Starter Template - Full-stack SvelteKit and FastAPI application with AI chatbot integration for business automation",
   },
   {
     title: "FurBabies Pet Store",
     description: "Modern eCommerce platform with inventory management, customer accounts, and secure checkout",
     tech: "React • Node.js • Stripe",
     image: "/images/furbabies-store.jpg",
+    altText: "FurBabies Pet Store - Modern eCommerce platform built with React, Node.js, and Stripe for secure pet product sales",
   },
   {
     title: "Leopold Nature Tracker",
     description: "Advanced nature observation app with TensorFlow audio classification and cloud data management",
     tech: "React • TensorFlow.js • Firebase",
     image: "/images/leopold-tracker.jpg",
+    altText: "Leopold Nature Tracker - Progressive web app for wildlife observation with TensorFlow audio classification and Firebase cloud sync",
   },
 ]
 
@@ -167,7 +170,7 @@ export default function LandingPage() {
                   <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={project.altText || project.title}
                       class="w-full h-48 object-cover"
                       loading="lazy"
                       decoding="async"

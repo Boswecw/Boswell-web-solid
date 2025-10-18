@@ -14,6 +14,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&w=1200&q=80&auto=format&fit=crop",
     type: "Live Demo",
     featured: true,
+    altText: "Kentucky Bistro Restaurant website - Full-featured restaurant site with online reservations and menu display built with React and Tailwind CSS",
   },
   {
     id: "ai-biz-starter",
@@ -24,6 +25,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80&auto=format&fit=crop",
     type: "Open Source",
     featured: true,
+    altText: "AI Biz Starter Template - Full-stack SvelteKit and FastAPI application with LangChain and OpenAI integration for business automation",
   },
   {
     id: "leopold-nature",
@@ -34,6 +36,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&auto=format&fit=crop",
     type: "Web App",
     featured: true,
+    altText: "Leopold Nature Observation App - Progressive web app for recording wildlife sightings with TensorFlow audio classification and Firebase cloud sync",
   },
   {
     id: "furbabies-store",
@@ -44,6 +47,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1200&q=80&auto=format&fit=crop",
     type: "eCommerce",
     featured: false,
+    altText: "FurBabies Pet Store - Modern eCommerce platform with inventory management and secure Stripe checkout built with React and Node.js",
   },
 ]
 
@@ -84,7 +88,7 @@ export default function PortfolioPage() {
                     <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
                       <img
                         src={project.image}
-                        alt={project.name}
+                        alt={project.altText || project.name}
                         class="w-full h-64 object-cover"
                         loading="lazy"
                         decoding="async"
@@ -131,6 +135,21 @@ export default function PortfolioPage() {
               </div>
             </section>
 
+            {/* Mid-Page CTA */}
+            <section class="mb-16 py-12 px-8 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl border border-blue-500/20">
+              <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                  See Something You Like?
+                </h2>
+                <p class="text-gray-300 mb-6">
+                  These are just a few examples of what we've built. Let's create something similar — or even better — for your business.
+                </p>
+                <LinkButton href="/contact" size="lg">
+                  Let's Build Together →
+                </LinkButton>
+              </div>
+            </section>
+
             {/* All Projects */}
             <section class="mb-16">
               <h2 class="text-3xl font-bold text-blue-400 mb-8">All Projects</h2>
@@ -140,7 +159,7 @@ export default function PortfolioPage() {
                     <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
                       <img
                         src={project.image}
-                        alt={project.name}
+                        alt={project.altText || project.name}
                         class="w-full h-48 object-cover"
                         loading="lazy"
                         decoding="async"
@@ -194,19 +213,19 @@ export default function PortfolioPage() {
 
             {/* CTA Section */}
             <section class="text-center">
-              <div class="bg-blue-900/20 rounded-2xl p-8 border border-blue-500/30">
+              <div class="bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-2xl p-8 border border-blue-500/30">
                 <h3 class="text-2xl md:text-3xl font-bold mb-4">
-                  Ready to Build Your Project?
+                  Ready to Build Your Next Project?
                 </h3>
-                <p class="text-gray-300 mb-6">
-                  Let's create a custom digital solution that drives real results for your business.
+                <p class="text-gray-300 mb-8">
+                  Whether it's a website, web app, or AI automation tool, we'll create a custom solution that drives real results.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                   <LinkButton href="/contact" size="lg">
-                    Start Your Project →
+                    Get a Custom Quote →
                   </LinkButton>
                   <LinkButton href="/services" variant="outline" size="lg">
-                    View Services
+                    Explore Our Services
                   </LinkButton>
                 </div>
               </div>

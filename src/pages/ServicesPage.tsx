@@ -122,6 +122,90 @@ export default function ServicesPage() {
               </div>
             </section>
 
+            {/* Websites vs. Web Apps Comparison */}
+            <section class="mb-16">
+              <h2 class="text-3xl font-bold text-center text-blue-400 mb-12">
+                Websites vs. Web Apps — What's Right for You?
+              </h2>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Websites */}
+                <div class="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl p-8 border border-blue-500/20">
+                  <h3 class="text-2xl font-bold text-blue-400 mb-6">🌐 Websites</h3>
+                  <p class="text-gray-300 mb-6">
+                    Perfect for showcasing your business, sharing information, and capturing leads.
+                  </p>
+                  <ul class="space-y-3 mb-6">
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">Marketing & brand presence</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">Contact forms & lead capture</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">eCommerce storefronts</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">Blog & content management</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">SEO-optimized for search</span>
+                    </li>
+                  </ul>
+                  <p class="text-sm text-gray-400">
+                    <strong>Best for:</strong> Small businesses, portfolios, restaurants, agencies, and anyone who needs an online presence.
+                  </p>
+                </div>
+
+                {/* Web Apps */}
+                <div class="bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl p-8 border border-purple-500/20">
+                  <h3 class="text-2xl font-bold text-purple-400 mb-6">⚙️ Web Apps</h3>
+                  <p class="text-gray-300 mb-6">
+                    Custom applications that solve specific business problems and automate workflows.
+                  </p>
+                  <ul class="space-y-3 mb-6">
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">Business automation & workflows</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">Real-time dashboards & analytics</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">AI-powered features & chatbots</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">User authentication & permissions</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-green-400 mt-1">✓</span>
+                      <span class="text-gray-300">Database-driven & scalable</span>
+                    </li>
+                  </ul>
+                  <p class="text-sm text-gray-400">
+                    <strong>Best for:</strong> SaaS platforms, internal tools, data management, AI automation, and mission-critical systems.
+                  </p>
+                </div>
+              </div>
+
+              {/* Unsure? CTA */}
+              <div class="mt-12 text-center">
+                <p class="text-gray-300 mb-4">
+                  Not sure which you need? <span class="text-blue-400 font-semibold">We'll help you figure it out.</span>
+                </p>
+                <LinkButton href="/contact" variant="outline">
+                  Book a Free Strategy Call
+                </LinkButton>
+              </div>
+            </section>
+
             {/* Process Section */}
             <section class="mb-16">
               <h2 class="text-3xl font-bold text-center text-blue-400 mb-12">
@@ -183,19 +267,19 @@ export default function ServicesPage() {
 
             {/* CTA Section */}
             <section class="text-center">
-              <div class="bg-blue-900/20 rounded-2xl p-8 border border-blue-500/30">
+              <div class="bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-2xl p-8 border border-blue-500/30">
                 <h3 class="text-2xl md:text-3xl font-bold mb-4">
-                  Ready to Get Started?
+                  Let's Build Your Next Project
                 </h3>
-                <p class="text-gray-300 mb-6">
-                  Let's discuss your project and create a custom solution that drives real results.
+                <p class="text-gray-300 mb-8">
+                  Whether you need a fast website, a custom web app, or AI automation, we'll create a solution tailored to your goals.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                   <LinkButton href="/contact" size="lg">
-                    Start Your Project →
+                    Get a Custom Quote →
                   </LinkButton>
                   <LinkButton href="/portfolio" variant="outline" size="lg">
-                    View Our Work
+                    See What We've Built
                   </LinkButton>
                 </div>
               </div>
