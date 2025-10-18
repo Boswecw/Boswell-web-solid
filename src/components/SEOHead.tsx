@@ -83,22 +83,30 @@ function updateCanonicalUrl(url: string) {
 function updateStructuredData(_title: string, description: string, url: string) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["Organization", "LocalBusiness"],
     "name": "Boswell Digital Solutions LLC",
     "description": description,
     "url": url,
+    "logo": "https://boswelldigitalsolutions.com/logo.png",
+    "image": "https://boswelldigitalsolutions.com/og-cover.jpg",
     "telephone": "(859) 436-7304",
     "email": "charlesboswell@boswelldigitalsolutions.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lexington",
       "addressRegion": "KY",
+      "postalCode": "40509",
       "addressCountry": "US"
     },
     "founder": {
       "@type": "Person",
       "name": "Charles Boswell"
     },
+    "areaServed": "US",
+    "sameAs": [
+      "https://www.linkedin.com/in/kywebdevboswell/",
+      "https://github.com/Boswecw"
+    ],
     "serviceArea": {
       "@type": "State",
       "name": "Kentucky"
@@ -112,7 +120,8 @@ function updateStructuredData(_title: string, description: string, url: string) 
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Starter Website"
+            "name": "Starter Website",
+            "description": "Perfect for small businesses and portfolios"
           },
           "price": "750-1200",
           "priceCurrency": "USD"
@@ -121,7 +130,8 @@ function updateStructuredData(_title: string, description: string, url: string) 
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Business Website"
+            "name": "Business Website",
+            "description": "Full-featured website with CMS and analytics"
           },
           "price": "1500-3000",
           "priceCurrency": "USD"
@@ -130,9 +140,30 @@ function updateStructuredData(_title: string, description: string, url: string) 
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "eCommerce Website"
+            "name": "eCommerce Website",
+            "description": "Complete online store with payment processing"
           },
           "price": "3000-6000",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web & Mobile Apps",
+            "description": "Custom applications and mobile development"
+          },
+          "price": "2500-8000",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Integration & Automation",
+            "description": "AI-powered solutions and business automation"
+          },
+          "price": "1500-5000",
           "priceCurrency": "USD"
         }
       ]

@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://boswellwebdevelopment.com/sitemap.xml
+Sitemap: https://boswelldigitalsolutions.com/sitemap.xml
