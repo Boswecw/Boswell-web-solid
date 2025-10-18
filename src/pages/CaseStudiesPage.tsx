@@ -120,7 +120,7 @@ export default function CaseStudiesPage() {
               </div>
             </section>
 
-            {/* Levy Case Study */}
+            {/* Livy Case Study */}
             <section class="mb-16">
               <div class="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-2xl p-8 border border-purple-500/20 mb-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -129,58 +129,58 @@ export default function CaseStudiesPage() {
                     <div class="space-y-3">
                       <div>
                         <p class="text-sm text-gray-400">Frontend</p>
-                        <p class="text-gray-300 font-semibold">React, Redux</p>
+                        <p class="text-gray-300 font-semibold">SvelteKit, PWA</p>
                       </div>
                       <div>
                         <p class="text-sm text-gray-400">Backend</p>
                         <p class="text-gray-300 font-semibold">FastAPI, Python</p>
                       </div>
                       <div>
-                        <p class="text-sm text-gray-400">AI/Automation</p>
-                        <p class="text-gray-300 font-semibold">LangChain, OpenAI</p>
+                        <p class="text-sm text-gray-400">Maps & Location</p>
+                        <p class="text-gray-300 font-semibold">MapLibre GL, OpenStreetMap</p>
                       </div>
                       <div>
-                        <p class="text-sm text-gray-400">Database</p>
-                        <p class="text-gray-300 font-semibold">PostgreSQL, Redis</p>
+                        <p class="text-sm text-gray-400">AI/RAG</p>
+                        <p class="text-gray-300 font-semibold">LangChain, pgvector</p>
                       </div>
                       <div>
                         <p class="text-sm text-gray-400">Timeline</p>
-                        <p class="text-gray-300 font-semibold">12 weeks</p>
+                        <p class="text-gray-300 font-semibold">8 weeks</p>
                       </div>
                     </div>
                   </div>
                   <div class="order-1 lg:order-2">
-                    <h2 class="text-3xl font-bold text-purple-400 mb-4">💼 Levy AI Business Suite</h2>
+                    <h2 class="text-3xl font-bold text-purple-400 mb-4">🗺️ Livy: The Trail of History</h2>
                     <p class="text-gray-300 mb-6 leading-relaxed">
-                      A comprehensive business automation platform that uses AI to streamline workflows, automate repetitive tasks, and provide intelligent insights.
+                      An immersive, location-aware historical tour platform that brings the past to life through GPS-guided trails, AI-powered Q&A, and offline-first design. Users explore curated historical narratives with contextual information, professional audio narration, and answers to their questions about the places they're visiting.
                     </p>
                     
                     <h3 class="text-xl font-bold text-purple-300 mb-3">The Challenge</h3>
                     <p class="text-gray-300 mb-6">
-                      Our client needed a scalable platform to automate business processes, integrate with existing tools, and provide AI-powered insights. They needed it fast and reliable.
+                      Create an engaging historical tour platform that works offline, provides location-aware content, and uses AI to answer contextual questions about historical sites. The platform needed to handle GPS tracking, offline maps, and rich multimedia content while maintaining an elegant, historically-inspired design.
                     </p>
 
                     <h3 class="text-xl font-bold text-purple-300 mb-3">Our Solution</h3>
                     <ul class="space-y-2 mb-6">
                       <li class="flex items-start gap-3">
                         <span class="text-green-400 mt-1">✓</span>
-                        <span class="text-gray-300">FastAPI backend for high-performance APIs</span>
+                        <span class="text-gray-300">SvelteKit PWA for offline-first functionality</span>
                       </li>
                       <li class="flex items-start gap-3">
                         <span class="text-green-400 mt-1">✓</span>
-                        <span class="text-gray-300">LangChain + OpenAI for intelligent automation</span>
+                        <span class="text-gray-300">MapLibre GL with OpenStreetMap for location tracking</span>
                       </li>
                       <li class="flex items-start gap-3">
                         <span class="text-green-400 mt-1">✓</span>
-                        <span class="text-gray-300">React dashboard for real-time monitoring</span>
+                        <span class="text-gray-300">FastAPI backend with LangChain RAG for AI Q&A</span>
                       </li>
                       <li class="flex items-start gap-3">
                         <span class="text-green-400 mt-1">✓</span>
-                        <span class="text-gray-300">PostgreSQL + Redis for data & caching</span>
+                        <span class="text-gray-300">PostgreSQL + pgvector for semantic search</span>
                       </li>
                       <li class="flex items-start gap-3">
                         <span class="text-green-400 mt-1">✓</span>
-                        <span class="text-gray-300">Webhook integrations with 20+ services</span>
+                        <span class="text-gray-300">Roman-inspired UI with accessibility focus</span>
                       </li>
                     </ul>
 
@@ -188,20 +188,20 @@ export default function CaseStudiesPage() {
                     <div class="bg-purple-900/30 rounded-lg p-4 border border-purple-500/20">
                       <ul class="space-y-2">
                         <li class="flex items-start gap-3">
-                          <span class="text-green-400">⏱️</span>
-                          <span class="text-gray-300"><strong>40% reduction</strong> in manual work</span>
+                          <span class="text-green-400">📍</span>
+                          <span class="text-gray-300"><strong>GPS accuracy</strong> within 5 meters</span>
                         </li>
                         <li class="flex items-start gap-3">
-                          <span class="text-green-400">💰</span>
-                          <span class="text-gray-300"><strong>$50K+ annual savings</strong> in labor</span>
+                          <span class="text-green-400">📱</span>
+                          <span class="text-gray-300"><strong>100% offline</strong> functionality with sync</span>
                         </li>
                         <li class="flex items-start gap-3">
-                          <span class="text-green-400">🚀</span>
-                          <span class="text-gray-300"><strong>99.9% uptime</strong> SLA</span>
+                          <span class="text-green-400">🤖</span>
+                          <span class="text-gray-300"><strong>AI Q&A accuracy</strong> with source attribution</span>
                         </li>
                         <li class="flex items-start gap-3">
-                          <span class="text-green-400">📈</span>
-                          <span class="text-gray-300">Deployed in <strong>12 weeks</strong></span>
+                          <span class="text-green-400">⚡</span>
+                          <span class="text-gray-300">Deployed in <strong>8 weeks</strong></span>
                         </li>
                       </ul>
                     </div>

@@ -144,8 +144,8 @@ export default function LandingPage() {
                     <p class="text-gray-300 text-sm">Wildlife observation platform with TensorFlow audio classification and cloud data sync</p>
                   </div>
                   <div>
-                    <h3 class="text-blue-400 font-bold mb-2">💼 Levy</h3>
-                    <p class="text-gray-300 text-sm">AI-powered business suite for automation, analytics, and intelligent workflows</p>
+                    <h3 class="text-blue-400 font-bold mb-2">🗺️ Livy</h3>
+                    <p class="text-gray-300 text-sm">Location-aware historical tour platform with GPS navigation, offline maps, and AI-powered Q&A</p>
                   </div>
                   <div>
                     <h3 class="text-blue-400 font-bold mb-2">🛒 FurBabies</h3>

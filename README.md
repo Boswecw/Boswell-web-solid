@@ -177,7 +177,7 @@ VITE_CERTIFICATE_URL=https://storage.googleapis.com/...
 3. **Portfolio Page** (`/portfolio`) - Project showcase with live demos, code links, and descriptions
 4. **Services Page** (`/services`) - Service packages, pricing, websites vs. web apps comparison, AI/Automation section
 5. **Process Page** (`/process`) - 4-step development methodology (Discover, Plan, Build, Launch) with deliverables
-6. **Case Studies Page** (`/case-studies`) - Detailed case studies for Leopold, Levy, and FurBabies with metrics
+6. **Case Studies Page** (`/case-studies`) - Detailed case studies for Leopold, Livy, and FurBabies with metrics
 7. **FAQ Page** (`/faq`) - 10 common questions with JSON-LD schema for rich snippets
 8. **Contact Page** (`/contact`) - Pricing packages, contact form, business info
 9. **Resume Page** (`/resume`) - Professional experience, skills, education
