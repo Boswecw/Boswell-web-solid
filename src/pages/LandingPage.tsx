@@ -38,18 +38,18 @@ export default function LandingPage() {
 
       <div class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
         {/* Hero Section */}
-        <section class="pt-24 px-6 pb-16">
+        <section class="pt-24 px-6 pb-20">
           <div class="max-w-6xl mx-auto text-center">
             <div class="mb-8 animate-fade-in">
-              <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-clip-text text-transparent mb-6">
-                Boswell Digital Solutions LLC
+              <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span class="bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-clip-text text-transparent">
+                  Websites. Apps. Automation.
+                </span>
+                <br />
+                <span class="text-white">Built with Precision and Purpose.</span>
               </h1>
-              <p class="text-xl md:text-2xl text-gray-300 mb-4">
-                Veteran-Owned Web & Application Development Studio
-              </p>
-              <p class="text-lg text-gray-400 max-w-3xl mx-auto">
-                Custom websites, web applications, mobile apps, business process automation, and intelligent tools
-                that help small businesses and mission-driven teams reach their goals with measurable results.
+              <p class="text-xl md:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed">
+                Veteran-owned studio crafting next-gen web and AI solutions with Svelte, Solid, and React — powering everything from brand sites to full-scale applications like Leopold and Levy.
               </p>
             </div>
 
@@ -58,7 +58,7 @@ export default function LandingPage() {
                 Start Your Project →
               </LinkButton>
               <LinkButton href="/portfolio" variant="outline" size="lg" class="transform hover:scale-105">
-                View Portfolio
+                See Our Work
               </LinkButton>
             </div>
 
@@ -70,47 +70,86 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Services Preview */}
-        <section class="py-16 px-6 bg-gray-800/30">
+        {/* What We Do Section */}
+        <section class="py-20 px-6 bg-gray-800/30">
           <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-              Digital Solutions That <span class="text-blue-400">Deliver Results</span>
-            </h2>
-            
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                <span class="text-blue-400">Design.</span> <span class="text-white">Code.</span> <span class="text-blue-400">Automate.</span> <span class="text-white">Launch.</span>
+              </h2>
+              <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                We don't just build websites — we build <span class="text-blue-400 font-semibold">digital ecosystems</span>.
+              </p>
+              <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                From lightweight static sites to interactive data-driven web apps, Boswell Digital Solutions merges clean design with cutting-edge frameworks like Svelte, Solid, and React, backed by modern APIs and AI integrations.
+              </p>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                <div class="text-blue-400 text-3xl mb-4">🚀</div>
-                <h3 class="text-xl font-bold mb-3">Starter Websites</h3>
-                <p class="text-gray-300 mb-4">Clean, fast, custom-coded sites for portfolios and small businesses.</p>
-                <p class="text-blue-400 font-semibold">$900 – $1,500</p>
+              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                <div class="text-blue-400 text-3xl mb-4">⚡</div>
+                <h3 class="text-lg font-bold mb-3">Web & App Development</h3>
+                <p class="text-gray-300 text-sm">Responsive, fast, and built for the long haul using React, Solid, and Svelte.</p>
               </div>
 
-              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                <div class="text-blue-400 text-3xl mb-4">🏢</div>
-                <h3 class="text-xl font-bold mb-3">Business Websites</h3>
-                <p class="text-gray-300 mb-4">Marketing sites with content tools, integrations, and room to grow.</p>
-                <p class="text-blue-400 font-semibold">$1,800 – $3,500</p>
+              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                <div class="text-blue-400 text-3xl mb-4">🧠</div>
+                <h3 class="text-lg font-bold mb-3">AI & Automation</h3>
+                <p class="text-gray-300 text-sm">Chatbots, smart forms, and AI-driven workflows powered by FastAPI, LangChain, and edge compute.</p>
               </div>
 
-              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                <div class="text-blue-400 text-3xl mb-4">🛒</div>
-                <h3 class="text-xl font-bold mb-3">eCommerce</h3>
-                <p class="text-gray-300 mb-4">Modern storefronts with secure checkout and inventory management.</p>
-                <p class="text-blue-400 font-semibold">$3,000 – $6,000+</p>
+              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                <div class="text-blue-400 text-3xl mb-4">🎨</div>
+                <h3 class="text-lg font-bold mb-3">UX/UI Design</h3>
+                <p class="text-gray-300 text-sm">Custom-tailored experiences that blend aesthetics with performance.</p>
               </div>
 
-              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                <div class="text-blue-400 text-3xl mb-4">⚙️</div>
-                <h3 class="text-xl font-bold mb-3">Web & Mobile Apps</h3>
-                <p class="text-gray-300 mb-4">Custom applications with real-time features, databases, and scalability.</p>
-                <p class="text-blue-400 font-semibold">$2,500 – $8,000+</p>
+              <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                <div class="text-blue-400 text-3xl mb-4">☁️</div>
+                <h3 class="text-lg font-bold mb-3">Hosting & DevOps</h3>
+                <p class="text-gray-300 text-sm">Secure deployments on Netlify, Render, or custom cloud environments.</p>
               </div>
             </div>
-            
-            <div class="text-center mt-8">
+
+            <div class="text-center mt-12">
               <LinkButton href="/services" variant="outline">
                 View All Services
               </LinkButton>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Boswell Section */}
+        <section class="py-20 px-6">
+          <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                  <span class="text-blue-400">Innovation</span> Backed by <span class="text-blue-400">Experience</span>
+                </h2>
+                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                  We're not just another dev shop. With over a decade of field-tested leadership and real-world app builds — like Leopold, a wildlife observation platform, and Levy, an AI business suite — we deliver software that's elegant, efficient, and engineered to grow with you.
+                </p>
+                <p class="text-lg text-gray-400 leading-relaxed">
+                  Built with modern stacks like SvelteKit, SolidStart, and FastAPI, our projects load fast, scale effortlessly, and leave a lasting impression.
+                </p>
+              </div>
+              <div class="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-2xl p-8 border border-blue-500/20">
+                <div class="space-y-6">
+                  <div>
+                    <h3 class="text-blue-400 font-bold mb-2">🚀 Leopold</h3>
+                    <p class="text-gray-300 text-sm">Wildlife observation platform with TensorFlow audio classification and cloud data sync</p>
+                  </div>
+                  <div>
+                    <h3 class="text-blue-400 font-bold mb-2">💼 Levy</h3>
+                    <p class="text-gray-300 text-sm">AI-powered business suite for automation, analytics, and intelligent workflows</p>
+                  </div>
+                  <div>
+                    <h3 class="text-blue-400 font-bold mb-2">🛒 FurBabies</h3>
+                    <p class="text-gray-300 text-sm">Modern eCommerce platform with inventory management and secure checkout</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -153,25 +192,42 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section class="py-16 px-6 bg-blue-900/20">
+        {/* About Section */}
+        <section class="py-20 px-6 bg-gray-800/30">
           <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Build Something Amazing?
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">
+              <span class="text-blue-400">Veteran-Owned.</span> <span class="text-white">Mission-Driven.</span> <span class="text-blue-400">Future-Focused.</span>
             </h2>
-            <p class="text-xl text-gray-300 mb-8">
-              Let's discuss your project and create a digital solution that drives real results.
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Founded by Navy veteran and full-stack developer Charles Boswell, Boswell Digital Solutions blends service, creativity, and technical precision.
+            </p>
+            <p class="text-lg text-gray-400 leading-relaxed">
+              Every project reflects the same mindset that drives our best work — <span class="text-blue-400 font-semibold">reliability, clarity, and innovation</span> that builds trust and results.
+            </p>
+            <div class="mt-10">
+              <LinkButton href="/about" variant="outline">
+                Learn More About Us
+              </LinkButton>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact CTA Strip */}
+        <section class="py-20 px-6 bg-gradient-to-r from-blue-900/40 to-purple-900/40 border-t border-blue-500/20">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Build What's Next — <span class="text-blue-400">Not What's Been Done</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+              Whether you need a fast website, a full-stack app, or a custom AI tool, we turn modern tech into simple, powerful solutions that move your mission forward.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <LinkButton href="/contact" size="lg" class="transform hover:scale-105">
-                Get Started Today →
+                Book a Free Consult →
               </LinkButton>
-              <a
-                href="mailto:charlesboswell@boswelldigitalsolutions.com"
-                class="inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 text-gray-300 hover:text-white hover:bg-gray-700/50 focus:ring-gray-500 px-6 py-3 text-lg rounded-lg no-underline"
-              >
-                Email: charlesboswell@boswelldigitalsolutions.com
-              </a>
+              <LinkButton href="/contact" variant="outline" size="lg" class="transform hover:scale-105">
+                Let's Build Together
+              </LinkButton>
             </div>
           </div>
         </section>
