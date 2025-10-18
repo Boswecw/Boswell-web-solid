@@ -82,10 +82,14 @@ export default function PortfolioPage() {
                 <For each={projects.filter(p => p.featured)}>
                   {(project) => (
                     <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                      <img 
-                        src={project.image} 
+                      <img
+                        src={project.image}
                         alt={project.name}
                         class="w-full h-64 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="800"
+                        height="600"
                       />
                       <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
@@ -134,10 +138,14 @@ export default function PortfolioPage() {
                 <For each={projects}>
                   {(project) => (
                     <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                      <img 
-                        src={project.image} 
+                      <img
+                        src={project.image}
                         alt={project.name}
                         class="w-full h-48 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="600"
+                        height="400"
                       />
                       <div class="p-6">
                         <div class="flex items-center justify-between mb-2">

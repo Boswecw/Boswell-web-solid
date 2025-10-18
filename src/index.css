@@ -33,6 +33,34 @@
   body {
     @apply font-sans antialiased;
   }
+
+  /* Accessible focus rings for keyboard navigation */
+  /* Lavender theme focus rings */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-purple-400 ring-offset-gray-900;
+  }
+
+  /* Focus ring for dark backgrounds */
+  .dark a:focus-visible,
+  .dark button:focus-visible,
+  .dark input:focus-visible,
+  .dark select:focus-visible,
+  .dark textarea:focus-visible {
+    @apply ring-purple-400 ring-offset-gray-900;
+  }
+
+  /* Focus ring for light backgrounds */
+  .light a:focus-visible,
+  .light button:focus-visible,
+  .light input:focus-visible,
+  .light select:focus-visible,
+  .light textarea:focus-visible {
+    @apply ring-purple-500 ring-offset-white;
+  }
 }
 
 /* Performance: Optimize animations */
