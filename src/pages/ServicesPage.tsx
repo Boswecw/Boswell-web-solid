@@ -122,6 +122,133 @@ export default function ServicesPage() {
               </div>
             </section>
 
+            {/* AI & Automation Services */}
+            <section class="mb-16">
+              <div class="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-2xl p-8 border border-purple-500/20">
+                <div class="text-center mb-12">
+                  <h2 class="text-3xl font-bold text-purple-400 mb-4">🤖 AI & Automation Services</h2>
+                  <p class="text-gray-300 max-w-3xl mx-auto">
+                    Leverage cutting-edge AI to automate workflows, enhance user experiences, and unlock new business opportunities
+                  </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* AI Chatbots */}
+                  <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold text-purple-400 mb-3">💬 AI Chatbots & Assistants</h3>
+                    <p class="text-gray-300 mb-4">
+                      Intelligent chatbots powered by OpenAI and LangChain that handle customer inquiries, provide support, and qualify leads 24/7.
+                    </p>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">OpenAI GPT integration</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Custom knowledge bases</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Multi-language support</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Seamless handoff to humans</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Business Automation */}
+                  <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold text-purple-400 mb-3">⚙️ Business Process Automation</h3>
+                    <p class="text-gray-300 mb-4">
+                      Automate repetitive tasks, streamline workflows, and reduce manual work with intelligent automation systems.
+                    </p>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Workflow automation</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Data processing & ETL</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">API integrations</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Scheduled tasks & webhooks</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Data Analysis */}
+                  <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold text-purple-400 mb-3">📊 AI-Powered Analytics</h3>
+                    <p class="text-gray-300 mb-4">
+                      Transform raw data into actionable insights with machine learning models and intelligent dashboards.
+                    </p>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Predictive analytics</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Real-time dashboards</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Custom ML models</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Data visualization</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Custom AI Tools */}
+                  <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold text-purple-400 mb-3">🛠️ Custom AI Tools</h3>
+                    <p class="text-gray-300 mb-4">
+                      Bespoke AI solutions tailored to your unique business challenges and opportunities.
+                    </p>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Fine-tuned models</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Computer vision</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Natural language processing</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-green-400 mt-1">✓</span>
+                        <span class="text-gray-300 text-sm">Recommendation engines</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                  <p class="text-gray-300 mb-4">
+                    Ready to harness the power of AI? <span class="text-purple-400 font-semibold">Let's explore what's possible.</span>
+                  </p>
+                  <LinkButton href="/contact" variant="outline">
+                    Discuss Your AI Project
+                  </LinkButton>
+                </div>
+              </div>
+            </section>
+
             {/* Websites vs. Web Apps Comparison */}
             <section class="mb-16">
               <h2 class="text-3xl font-bold text-center text-blue-400 mb-12">
