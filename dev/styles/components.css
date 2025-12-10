@@ -318,7 +318,8 @@ p {
 .hero {
   text-align: center;
   padding: var(--space-3xl) var(--space-md);
-  background: var(--color-background-alt);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -330,6 +331,7 @@ p {
 .hero h1 {
   font-size: var(--font-size-4xl);
   margin-bottom: var(--space-md);
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -340,7 +342,7 @@ p {
 
 .hero p {
   font-size: var(--font-size-lg);
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.9);
   max-width: var(--max-width-md);
   margin: var(--space-sm) auto;
   line-height: var(--line-height-relaxed);
