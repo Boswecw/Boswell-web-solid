@@ -1,0 +1,24 @@
+/* Import CSS files */
+@import './styles/variables.css';
+@import './styles/utilities.css';
+@import './styles/components.css';
+@import './styles/accessibility.css';
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: var(--line-height-normal);
+}
+
+code {
+  font-family: var(--font-family-mono);
+}
