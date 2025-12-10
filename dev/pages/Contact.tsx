@@ -79,7 +79,7 @@ const Contact: Component = () => {
           >
             {/* Hidden fields for Netlify Forms */}
             <input type="hidden" name="form-name" value="contact" />
-            <p style="display:none;">
+            <p class="hidden">
               <label>
                 Don't fill this out if you're human: <input name="bot-field" />
               </label>
