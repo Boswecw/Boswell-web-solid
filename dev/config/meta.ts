@@ -55,6 +55,13 @@ export const META_CONFIG: MetaConfig = {
     url: `${baseUrl}/privacy`,
     ogImage: defaultOgImage,
   },
+  terms: {
+    title: 'Terms of Service — Boswell Digital Solutions',
+    description:
+      'Terms of Service for Boswell Digital Solutions LLC. Read our user agreement, service policies, and legal terms.',
+    url: `${baseUrl}/terms`,
+    ogImage: defaultOgImage,
+  },
 }
 
 // Organization structured data for home page

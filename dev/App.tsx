@@ -10,6 +10,7 @@ import Services from './pages/Services'
 import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 
 const App: Component = () => {
   return (
@@ -33,6 +34,7 @@ const App: Component = () => {
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
     </Router>
   )
 }
