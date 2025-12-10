@@ -1,42 +1,46 @@
 /* ============================================================================
    DESIGN TOKENS - Boswell Digital Solutions
-   Enhanced CSS Variables for Modern Design System
+   REFACTORED: Restored Professional Government Palette
    ============================================================================ */
 
 :root {
   /* =========================================================================
-     COLOR PALETTE - Professional Blue Theme
+     COLOR PALETTE - Professional Government Blue + Bronze
      ========================================================================= */
 
-  /* Primary - Blue */
-  --color-primary: #2563eb;
-  --color-primary-light: #3b82f6;
-  --color-primary-lighter: #60a5fa;
-  --color-primary-dark: #1e40af;
-  --color-primary-darker: #1e3a8a;
-  --color-primary-50: rgba(37, 99, 235, 0.05);
-  --color-primary-100: rgba(37, 99, 235, 0.1);
+  /* Primary - Deep Federal Blue (Authority & Trust) */
+  --color-primary: #0A2A43;           /* Deep Federal Blue */
+  --color-primary-light: #1A3A53;     /* Lighter for hover states */
+  --color-primary-lighter: #2A4A63;   /* Even lighter for backgrounds */
+  --color-primary-dark: #051820;      /* Darker for emphasis */
+  --color-primary-50: rgba(10, 42, 67, 0.05);
+  --color-primary-100: rgba(10, 42, 67, 0.1);
 
-  /* Accent - Amber */
-  --color-accent: #f59e0b;
-  --color-accent-light: #fbbf24;
-  --color-accent-dark: #d97706;
+  /* Secondary - Steel Gray (Professional Neutral) */
+  --color-secondary: #4A5568;         /* Steel Gray */
+  --color-secondary-light: #5A6578;   /* Lighter */
+  --color-secondary-dark: #3A4558;    /* Darker */
 
-  /* Secondary - Slate */
-  --color-secondary: #64748b;
-  --color-secondary-light: #94a3b8;
-  --color-secondary-dark: #475569;
+  /* Accent - Service Bronze (Distinctive & Elegant) */
+  --color-accent: #CBA86F;            /* Service Bronze */
+  --color-accent-light: #DBBB8F;      /* Lighter for hover */
+  --color-accent-dark: #BBAA5F;       /* Darker for emphasis */
 
-  /* Neutrals */
-  --color-text: #1e293b;
-  --color-text-light: #64748b;
-  --color-text-muted: #94a3b8;
-  --color-background: #ffffff;
-  --color-background-alt: #f8fafc;
-  --color-background-subtle: #f1f5f9;
-  --color-border: #e2e8f0;
-  --color-border-light: #f1f5f9;
-  --color-border-dark: #cbd5e1;
+  /* Support - Forest Green (Federal Credibility) */
+  --color-support: #2E5A3F;           /* Forest Green */
+  --color-support-light: #3E6A4F;     /* Lighter */
+  --color-support-dark: #1E4A2F;      /* Darker */
+
+  /* Neutrals - Clean & Professional */
+  --color-text: #1A1A1A;              /* Charcoal (not pure black) */
+  --color-text-light: #4A5568;        /* Secondary text */
+  --color-text-muted: #6B7280;        /* Muted text */
+  --color-background: #FFFFFF;        /* Clean white */
+  --color-background-alt: #F7F7F5;    /* Off-white (subtle warmth) */
+  --color-background-subtle: #EFEFED; /* Very subtle gray */
+  --color-border: #D9D5CC;            /* Warm gray border */
+  --color-border-light: #F1EDE6;      /* Light border */
+  --color-border-dark: #C4BDB2;       /* Dark border */
 
   /* Semantic Colors */
   --color-success: #10b981;
@@ -81,7 +85,6 @@
   --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  --font-family-heading: 'Georgia', 'Cambria', 'Times New Roman', Times, serif;
 
   /* Fluid Font Sizes (mobile → desktop) */
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);      /* 12-14px */
@@ -111,122 +114,87 @@
   /* Letter Spacing */
   --letter-spacing-tight: -0.025em;
   --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.025em;
-  --letter-spacing-wider: 0.05em;
+  --letter-spacing-wide: 0.02em;
 
   /* =========================================================================
-     BORDER RADIUS SYSTEM
+     BORDER RADIUS - Systematic Curve System
      ========================================================================= */
 
-  --border-radius-none: 0;
-  --border-radius-sm: 0.25rem;    /* 4px */
-  --border-radius-md: 0.375rem;   /* 6px */
-  --border-radius-lg: 0.5rem;     /* 8px */
-  --border-radius-xl: 0.75rem;    /* 12px */
-  --border-radius-2xl: 1rem;      /* 16px */
-  --border-radius-full: 9999px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 18px;
+  --border-radius-full: 999px;
+
+  /* Legacy radius (backwards compatible) */
+  --radius-sm: var(--border-radius-sm);
+  --radius-md: var(--border-radius-md);
+  --radius-lg: var(--border-radius-lg);
+  --radius-xl: var(--border-radius-xl);
 
   /* =========================================================================
-     SHADOW DEPTH LEVELS
+     SHADOWS - Depth Levels
      ========================================================================= */
 
   --shadow-none: none;
-  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --shadow-xs: 0 2px 4px rgba(10, 42, 67, 0.05);
+  --shadow-sm: 0 4px 8px rgba(10, 42, 67, 0.08);
+  --shadow-md: 0 10px 20px rgba(10, 42, 67, 0.1);
+  --shadow-lg: 0 15px 35px rgba(10, 42, 67, 0.15);
+  --shadow-xl: 0 20px 50px rgba(10, 42, 67, 0.2);
+  --shadow-2xl: 0 25px 60px rgba(10, 42, 67, 0.25);
+  --shadow-inner: inset 0 2px 4px rgba(10, 42, 67, 0.06);
+
+  /* Legacy shadows (backwards compatible) */
+  --shadow-soft: var(--shadow-md);
 
   /* =========================================================================
-     TRANSITIONS & ANIMATIONS
+     TRANSITIONS - Timing & Easing
      ========================================================================= */
 
-  /* Duration */
-  --duration-instant: 50ms;
-  --duration-fast: 150ms;
+  --duration-fast: 100ms;
   --duration-base: 200ms;
   --duration-slow: 300ms;
-  --duration-slower: 500ms;
 
-  /* Easing Functions */
-  --ease-linear: linear;
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-  /* Combined Transitions */
-  --transition-fast: var(--duration-fast) var(--ease-out);
-  --transition-base: var(--duration-base) var(--ease-out);
-  --transition-slow: var(--duration-slow) var(--ease-out);
-  --transition-all: all var(--duration-base) var(--ease-out);
 
   /* =========================================================================
-     Z-INDEX SYSTEM
+     Z-INDEX - Stacking Levels
      ========================================================================= */
 
-  --z-base: 0;
-  --z-dropdown: 1000;
-  --z-sticky: 1020;
-  --z-fixed: 1030;
-  --z-modal-backdrop: 1040;
-  --z-modal: 1050;
-  --z-popover: 1060;
-  --z-tooltip: 1070;
-  --z-notification: 1080;
+  --z-dropdown: 100;
+  --z-sticky: 101;
+  --z-fixed: 500;
+  --z-modal: 1000;
+  --z-toast: 1100;
 
   /* =========================================================================
-     BREAKPOINTS (for reference)
+     OPACITY - Transparency Levels
+     ========================================================================= */
+
+  --opacity-disabled: 0.5;
+  --opacity-hover: 0.9;
+
+  /* =========================================================================
+     BREAKPOINTS - Mobile-First Responsive
      ========================================================================= */
 
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
-
-  /* Legacy breakpoints */
-  --breakpoint-mobile: 320px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
-
-  /* =========================================================================
-     CONTAINER MAX WIDTHS
-     ========================================================================= */
-
-  --max-width-xs: 20rem;      /* 320px */
-  --max-width-sm: 24rem;      /* 384px */
-  --max-width-md: 28rem;      /* 448px */
-  --max-width-lg: 32rem;      /* 512px */
-  --max-width-xl: 36rem;      /* 576px */
-  --max-width-2xl: 42rem;     /* 672px */
-  --max-width-3xl: 48rem;     /* 768px */
-  --max-width-4xl: 56rem;     /* 896px */
-  --max-width-5xl: 64rem;     /* 1024px */
-  --max-width-6xl: 72rem;     /* 1152px */
-  --max-width-7xl: 80rem;     /* 1280px */
-  --max-width-prose: 65ch;
-
-  /* Legacy container widths (backwards compatible) */
-  --max-width-640: 40rem;     /* 640px */
-  --max-width-768: 48rem;     /* 768px */
-  --max-width-960: 60rem;     /* 960px */
-  --max-width-1280: 80rem;    /* 1280px */
 }
 
 /* =========================================================================
-   REDUCED MOTION SUPPORT
-   Respect user's motion preferences for accessibility
+   PREFERS REDUCED MOTION - Accessibility
    ========================================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-    --duration-instant: 0ms;
     --duration-fast: 0ms;
     --duration-base: 0ms;
     --duration-slow: 0ms;
-    --duration-slower: 0ms;
   }
 }
