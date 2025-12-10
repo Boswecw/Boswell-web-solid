@@ -379,7 +379,7 @@ header {
   align-items: center;
   text-decoration: none;
   transition: opacity var(--transition-fast);
-  margin-left: var(--space-xs); /* Minimal left spacing */
+  margin-left: 0; /* Absolute left edge */
 }
 
 .header-logo:hover {
