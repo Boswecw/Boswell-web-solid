@@ -358,40 +358,100 @@ p {
    NAVIGATION
    ========================================================================= */
 
-nav {
-  display: flex;
-  gap: var(--space-md);
-  padding: var(--space-md);
+header {
   background: var(--color-background);
   border-bottom: 1px solid var(--color-border);
 }
 
-nav a {
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.header-logo:hover {
+  opacity: 0.8;
+}
+
+.header-logo:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.header-nav {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.header-nav a {
   color: var(--color-text);
   text-decoration: none;
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-fast);
   font-weight: var(--font-weight-medium);
+  white-space: nowrap;
 }
 
-nav a:hover {
+.header-nav a:hover {
   color: var(--color-primary);
   background: var(--color-background-alt);
 }
 
-nav a:focus {
+.header-nav a:focus {
   outline: none;
 }
 
-nav a:focus-visible {
+.header-nav a:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-nav a.active {
+.header-nav a.active,
+.header-nav a[aria-current="page"] {
   color: var(--color-primary);
   background: var(--color-primary-50);
+}
+
+/* Responsive navigation for smaller screens */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .header-logo {
+    align-self: flex-start;
+  }
+
+  .header-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  .logo-img {
+    height: 40px;
+  }
 }
 
 /* =========================================================================

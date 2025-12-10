@@ -46,29 +46,34 @@ export const Header: Component = () => {
 
   return (
     <header>
-      <nav>
-        <A href="/" aria-current={isActive('/') ? 'page' : undefined}>
-          Home
+      <div class="header-container">
+        <A href="/" class="header-logo" aria-label="Boswell Digital Solutions Home">
+          <img src="/assets/sigicon.svg" alt="Boswell Digital Solutions" class="logo-img" />
         </A>
-        <A href="/apps" aria-current={isActive('/apps') ? 'page' : undefined}>
-          Apps
-        </A>
-        <A href="/about" aria-current={isActive('/about') ? 'page' : undefined}>
-          About
-        </A>
-        <A href="/government" aria-current={isActive('/government') ? 'page' : undefined}>
-          Government
-        </A>
-        <A href="/services" aria-current={isActive('/services') ? 'page' : undefined}>
-          Services
-        </A>
-        <A href="/portfolio" aria-current={isActive('/portfolio') ? 'page' : undefined}>
-          Portfolio
-        </A>
-        <A href="/contact" aria-current={isActive('/contact') ? 'page' : undefined}>
-          Contact
-        </A>
-      </nav>
+        <nav class="header-nav">
+          <A href="/" aria-current={isActive('/') ? 'page' : undefined}>
+            Home
+          </A>
+          <A href="/apps" aria-current={isActive('/apps') ? 'page' : undefined}>
+            Apps
+          </A>
+          <A href="/about" aria-current={isActive('/about') ? 'page' : undefined}>
+            About
+          </A>
+          <A href="/government" aria-current={isActive('/government') ? 'page' : undefined}>
+            Government
+          </A>
+          <A href="/services" aria-current={isActive('/services') ? 'page' : undefined}>
+            Services
+          </A>
+          <A href="/portfolio" aria-current={isActive('/portfolio') ? 'page' : undefined}>
+            Portfolio
+          </A>
+          <A href="/contact" aria-current={isActive('/contact') ? 'page' : undefined}>
+            Contact
+          </A>
+        </nav>
+      </div>
     </header>
   )
 }
