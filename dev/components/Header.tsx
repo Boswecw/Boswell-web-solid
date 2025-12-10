@@ -51,25 +51,25 @@ export const Header: Component = () => {
           <img src="/assets/sigicon.svg" alt="Boswell Digital Solutions" class="logo-img" />
         </A>
         <nav class="header-nav">
-          <A href="/" aria-current={isActive('/') ? 'page' : undefined}>
+          <A href="/" end activeClass="active" aria-current={isActive('/') ? 'page' : undefined}>
             Home
           </A>
-          <A href="/apps" aria-current={isActive('/apps') ? 'page' : undefined}>
+          <A href="/apps" activeClass="active" aria-current={isActive('/apps') ? 'page' : undefined}>
             Apps
           </A>
-          <A href="/about" aria-current={isActive('/about') ? 'page' : undefined}>
+          <A href="/about" activeClass="active" aria-current={isActive('/about') ? 'page' : undefined}>
             About
           </A>
-          <A href="/government" aria-current={isActive('/government') ? 'page' : undefined}>
+          <A href="/government" activeClass="active" aria-current={isActive('/government') ? 'page' : undefined}>
             Government
           </A>
-          <A href="/services" aria-current={isActive('/services') ? 'page' : undefined}>
+          <A href="/services" activeClass="active" aria-current={isActive('/services') ? 'page' : undefined}>
             Services
           </A>
-          <A href="/portfolio" aria-current={isActive('/portfolio') ? 'page' : undefined}>
+          <A href="/portfolio" activeClass="active" aria-current={isActive('/portfolio') ? 'page' : undefined}>
             Portfolio
           </A>
-          <A href="/contact" aria-current={isActive('/contact') ? 'page' : undefined}>
+          <A href="/contact" activeClass="active" aria-current={isActive('/contact') ? 'page' : undefined}>
             Contact
           </A>
         </nav>
