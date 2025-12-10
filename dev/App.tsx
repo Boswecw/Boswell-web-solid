@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js'
-import { Router, Route } from '@solidjs/router'
+import { Router } from '@solidjs/router'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import Home from './pages/Home'
@@ -13,11 +13,18 @@ import Privacy from './pages/Privacy'
 
 const App: Component = () => {
   return (
-    <Router>
-      <a href="#main" class="skip-link">
-        Skip to main content
-      </a>
-      <Header />
+    <Router
+      root={(props) => (
+        <>
+          <a href="#main" class="skip-link">
+            Skip to main content
+          </a>
+          <Header />
+          {props.children}
+          <Footer />
+        </>
+      )}
+    >
       <Route path="/" component={Home} />
       <Route path="/apps" component={Apps} />
       <Route path="/about" component={About} />
@@ -26,7 +33,6 @@ const App: Component = () => {
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy" component={Privacy} />
-      <Footer />
     </Router>
   )
 }
