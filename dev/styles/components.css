@@ -1,29 +1,120 @@
-/* Section Component */
-.section {
-  padding: var(--space-2xl) 0;
+/* ============================================================================
+   COMPONENT STYLES - Boswell Digital Solutions
+   Modernized component architecture with accessibility enhancements
+   ============================================================================ */
+
+/* =========================================================================
+   BUTTONS
+   ========================================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--border-radius-md);
+  border: none;
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  transition: all var(--duration-base) var(--ease-in-out);
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.section-header {
-  margin-bottom: var(--space-xl);
-  text-align: center;
+/* Enhanced focus states for WCAG compliance */
+.btn:focus {
+  outline: none;
 }
 
-.section-subtitle {
-  color: var(--color-text-light);
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary-light);
+}
+
+.btn-outline:active {
+  background: var(--color-primary-100);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.btn-accent:hover {
+  background: var(--color-accent-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Button sizes */
+.btn-sm {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: var(--space-md) var(--space-xl);
   font-size: var(--font-size-lg);
-  margin-top: var(--space-sm);
-  max-width: var(--max-width-md);
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Card Component */
+/* =========================================================================
+   CARDS
+   ========================================================================= */
+
 .card {
   background: var(--color-background);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   padding: var(--space-lg);
-  transition: all var(--transition-base);
+  transition: all var(--duration-base) var(--ease-in-out);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -32,10 +123,28 @@
 .card:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Focus states for interactive cards */
+.card:focus {
+  outline: none;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .card-header {
   margin-bottom: var(--space-md);
+}
+
+.card-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
 }
 
 .card-tagline {
@@ -55,6 +164,8 @@
   margin-top: var(--space-sm);
   padding-top: var(--space-sm);
   border-top: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
 }
 
 .card-actions {
@@ -63,40 +174,81 @@
   border-top: 1px solid var(--color-border-light);
 }
 
-/* Buttons */
-.btn {
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--border-radius-md);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
+/* Card variants */
+.card-elevated {
+  box-shadow: var(--shadow-md);
   border: none;
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.card-interactive {
   cursor: pointer;
-  transition: all var(--transition-base);
-  text-decoration: none;
-  display: inline-block;
 }
 
-.btn-primary {
+/* =========================================================================
+   SECTIONS
+   ========================================================================= */
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+}
+
+.section-header {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+.section-subtitle {
+  color: var(--color-text-light);
+  font-size: var(--font-size-lg);
+  margin-top: var(--space-sm);
+  max-width: var(--max-width-md);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Section variants */
+.section-alt {
+  background: var(--color-background-alt);
+}
+
+.section-primary {
   background: var(--color-primary);
   color: white;
 }
 
-.btn-primary:hover {
-  background: var(--color-primary-dark);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-}
-
-.btn-outline:hover {
-  background: var(--color-primary);
+.section-primary .section-title,
+.section-primary .section-subtitle {
   color: white;
 }
 
-/* Typography */
+/* =========================================================================
+   TYPOGRAPHY COMPONENTS
+   ========================================================================= */
+
 .h1,
 h1 {
   font-size: var(--font-size-4xl);
@@ -104,6 +256,7 @@ h1 {
   line-height: var(--line-height-tight);
   color: var(--color-text);
   margin: 0 0 var(--space-md) 0;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .h2,
@@ -113,6 +266,7 @@ h2 {
   line-height: var(--line-height-tight);
   color: var(--color-text);
   margin: 0 0 var(--space-md) 0;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .h3,
@@ -133,11 +287,44 @@ h4 {
   margin: 0 0 var(--space-sm) 0;
 }
 
-/* Hero Section */
+.h5,
+h5 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.h6,
+h6 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+/* Prose content */
+p {
+  margin: 0 0 var(--space-md) 0;
+  line-height: var(--line-height-relaxed);
+}
+
+/* =========================================================================
+   HERO SECTION
+   ========================================================================= */
+
 .hero {
   text-align: center;
   padding: var(--space-3xl) var(--space-md);
   background: var(--color-background-alt);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: var(--space-32) var(--space-md);
+  }
 }
 
 .hero h1 {
@@ -145,20 +332,32 @@ h4 {
   margin-bottom: var(--space-md);
 }
 
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+  }
+}
+
 .hero p {
   font-size: var(--font-size-lg);
   color: var(--color-text-light);
   max-width: var(--max-width-md);
   margin: var(--space-sm) auto;
+  line-height: var(--line-height-relaxed);
 }
 
-@media (min-width: 768px) {
-  .hero h1 {
-    font-size: 3rem;
-  }
+.hero-actions {
+  margin-top: var(--space-lg);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Navigation */
+/* =========================================================================
+   NAVIGATION
+   ========================================================================= */
+
 nav {
   display: flex;
   gap: var(--space-md);
@@ -173,6 +372,7 @@ nav a {
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-fast);
+  font-weight: var(--font-weight-medium);
 }
 
 nav a:hover {
@@ -180,12 +380,24 @@ nav a:hover {
   background: var(--color-background-alt);
 }
 
-/* Main Content */
-main {
-  min-height: calc(100vh - 200px);
+nav a:focus {
+  outline: none;
 }
 
-/* Footer */
+nav a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+nav a.active {
+  color: var(--color-primary);
+  background: var(--color-primary-50);
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+
 .footer {
   background: var(--color-background-alt);
   border-top: 1px solid var(--color-border);
@@ -196,6 +408,7 @@ main {
 .footer-content {
   max-width: var(--max-width-xl);
   margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
 .footer-grid {
@@ -219,6 +432,7 @@ main {
 
 .footer-section h4 {
   margin-bottom: var(--space-md);
+  color: var(--color-text);
 }
 
 .footer-links {
@@ -242,6 +456,16 @@ main {
   color: var(--color-primary);
 }
 
+.footer-links a:focus {
+  outline: none;
+}
+
+.footer-links a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
 .footer-bottom {
   padding-top: var(--space-lg);
   border-top: 1px solid var(--color-border);
@@ -250,20 +474,170 @@ main {
 
 .footer-bottom p {
   margin: var(--space-xs) 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
 }
 
-/* SDVOSB Banner */
+/* =========================================================================
+   SDVOSB BANNER
+   ========================================================================= */
+
 .sdvosb-banner {
   background: var(--color-primary);
   color: white;
+  padding: var(--space-lg);
   border-radius: var(--border-radius-lg);
   text-align: center;
+  box-shadow: var(--shadow-md);
 }
 
-.sdvosb-banner h1 {
+.sdvosb-banner h1,
+.sdvosb-banner h2,
+.sdvosb-banner h3,
+.sdvosb-banner h4 {
   color: white;
 }
 
 .sdvosb-banner p {
   color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================================
+   BADGES & PILLS
+   ========================================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--border-radius-full);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.badge-primary {
+  background: var(--color-primary-100);
+  color: var(--color-primary);
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+}
+
+.badge-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+}
+
+/* =========================================================================
+   ALERTS & NOTIFICATIONS
+   ========================================================================= */
+
+.alert {
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  border: 1px solid;
+  margin-bottom: var(--space-md);
+}
+
+.alert-info {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--color-info);
+  color: var(--color-text);
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--color-success);
+  color: var(--color-text);
+}
+
+.alert-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--color-warning);
+  color: var(--color-text);
+}
+
+.alert-error {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--color-error);
+  color: var(--color-text);
+}
+
+/* =========================================================================
+   DIVIDERS
+   ========================================================================= */
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-lg) 0;
+}
+
+.divider-thick {
+  height: 2px;
+  background: var(--color-border-dark);
+}
+
+/* =========================================================================
+   MAIN CONTENT AREA
+   ========================================================================= */
+
+main {
+  min-height: calc(100vh - 200px);
+}
+
+/* =========================================================================
+   FOCUS STATES (Global WCAG Compliance)
+   ========================================================================= */
+
+/* Remove default outline, use focus-visible */
+*:focus {
+  outline: none;
+}
+
+/* Enhanced focus visible for all interactive elements */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Specific focus states for common elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* =========================================================================
+   REDUCED MOTION SUPPORT
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Disable transforms for reduced motion */
+  .btn:hover,
+  .btn:active,
+  .card:hover {
+    transform: none;
+  }
 }
