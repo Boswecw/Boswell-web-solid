@@ -367,7 +367,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-md) var(--space-md) var(--space-md) var(--space-xs);
+  padding: var(--space-md) var(--space-md) var(--space-md) 0;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -377,7 +377,7 @@ header {
   align-items: center;
   text-decoration: none;
   transition: opacity var(--transition-fast);
-  margin-left: -4px; /* Pull logo closer to edge */
+  margin-left: var(--space-xs); /* Minimal left spacing */
 }
 
 .header-logo:hover {
