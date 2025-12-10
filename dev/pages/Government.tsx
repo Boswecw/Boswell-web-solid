@@ -23,6 +23,30 @@ const Government: Component = () => {
         </div>
 
         <div class="container-center max-w-960">
+          {/* Leadership & Credentials */}
+          <Section title="Leadership & Federal Credibility">
+            <div class="card">
+              <p class="mb-md">
+                <strong>Led by Charles Boswell</strong>, a U.S. Navy Veteran (Submariner, Dolphins
+                qualified, 10% service-connected disabled) with 16+ years of federal service
+                including incident command, contracting oversight, and security management
+                expertise.
+              </p>
+              <p class="mb-md">
+                Charles's background ensures our solutions align with federal expectations around
+                accountability, security, and mission support. He doesn't just understand
+                government requirements from policy documents—he's lived them as a Type III
+                Incident Commander, Type II Contracting Officer's Representative, and Qualified
+                Security Manager with the U.S. Forest Service.
+              </p>
+              <p>
+                This combination of military discipline, federal operations experience, and modern
+                software engineering creates a unique perspective on delivering technology that
+                serves agencies effectively and meets mission requirements reliably.
+              </p>
+            </div>
+          </Section>
+
           <Section
             title="Our Qualifications"
             subtitle="Veteran-owned expertise with government-grade quality."
@@ -39,7 +63,7 @@ const Government: Component = () => {
                 <h3 class="h3">Federal Experience</h3>
                 <p>
                   16+ years federal service with USFS, including incident command, security
-                  management, and COR responsibilities.
+                  management, COR responsibilities, and ecological field operations.
                 </p>
               </div>
               <div class="card">
@@ -56,6 +80,31 @@ const Government: Component = () => {
                   solutions built to government standards.
                 </p>
               </div>
+            </div>
+          </Section>
+
+          {/* What Sets Us Apart */}
+          <Section title="What Sets Us Apart">
+            <div class="card">
+              <h4 class="h4 mb-md">Real Federal Experience</h4>
+              <p class="mb-md">
+                We understand Section 508 compliance not as a checkbox, but as a mission
+                requirement. We know FISMA and NIST frameworks from agency implementation, not
+                just documentation. We've managed contracts, led teams under pressure, and built
+                systems in challenging field conditions.
+              </p>
+              <h4 class="h4 mb-md">Small Business Advantage</h4>
+              <p class="mb-md">
+                Direct access to the founder and principal engineer means clear communication,
+                rapid response, and accountability at every level. No account managers, no
+                bureaucracy—just reliable delivery and mission focus.
+              </p>
+              <h4 class="h4 mb-md">Designed for Real-World Use</h4>
+              <p>
+                Our solutions are informed by years of field experience and operational reality.
+                We build tools that work in practice, not just in theory—because we've been the
+                users who depend on technology in mission-critical situations.
+              </p>
             </div>
           </Section>
 
@@ -128,7 +177,7 @@ const Government: Component = () => {
               <h3 class="h3">Ready to discuss your project?</h3>
               <p class="mt-md mb-md">
                 Contact us to learn more about our capabilities and how we can support your
-                agency's mission.
+                agency's mission. Direct access to Charles Boswell, Founder & Principal Engineer.
               </p>
               <div class="flex flex-center gap-sm">
                 <a href="/contact">

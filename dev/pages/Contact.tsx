@@ -54,105 +54,157 @@ const Contact: Component = () => {
         image={META_CONFIG.contact.ogImage}
       />
       <main id="main">
-        <section class="contact">
+        <div class="hero">
           <h1>Get In Touch</h1>
-          <p>Let's discuss your project and how we can help.</p>
+          <p class="text-lg">
+            Direct access to Charles Boswell, Founder & Principal Engineer.
+          </p>
+          <p class="text-sm text-muted mt-sm">
+            Responsive to partnership inquiries, pilot projects, custom development, and government
+            engagements.
+          </p>
+        </div>
 
-          {submitStatus() === 'success' && (
-            <div class="alert alert-success" role="alert">
-              <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
-            </div>
-          )}
-
-          {submitStatus() === 'error' && (
-            <div class="alert alert-error" role="alert">
-              <strong>Error:</strong> {errorMessage()}
-            </div>
-          )}
-
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-          >
-            {/* Hidden fields for Netlify Forms */}
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </p>
-
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Name"
-                required
-                value={formData().name}
-                onInput={(e) => setFormData({ ...formData(), name: e.currentTarget.value })}
-                disabled={isSubmitting()}
-              />
+        <div class="container-center max-w-960">
+          <section class="contact">
+            <div class="card mb-xl">
+              <h2 class="h3 mb-md">Why Direct Access Matters</h2>
+              <p class="mb-md">
+                When you contact Boswell Digital Solutions, you're reaching the founder and
+                principal engineer—not an account manager or sales team. This means:
+              </p>
+              <ul class="list-bulleted">
+                <li>
+                  <strong>Clear Technical Discussion:</strong> Immediate technical understanding
+                  and honest assessment of what's possible
+                </li>
+                <li>
+                  <strong>Rapid Response:</strong> No layers of bureaucracy, just direct
+                  communication and quick answers
+                </li>
+                <li>
+                  <strong>Accountability:</strong> The person you talk to is the person who builds
+                  the solution
+                </li>
+                <li>
+                  <strong>Federal Experience:</strong> Direct conversation with someone who
+                  understands government operations and requirements
+                </li>
+              </ul>
             </div>
 
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="your.email@example.com"
-                required
-                value={formData().email}
-                onInput={(e) => setFormData({ ...formData(), email: e.currentTarget.value })}
-                disabled={isSubmitting()}
-              />
-            </div>
+            {submitStatus() === 'success' && (
+              <div class="alert alert-success" role="alert">
+                <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
+              </div>
+            )}
 
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us about your project or inquiry..."
-                required
-                rows="6"
-                value={formData().message}
-                onInput={(e) => setFormData({ ...formData(), message: e.currentTarget.value })}
-                disabled={isSubmitting()}
-              />
-            </div>
+            {submitStatus() === 'error' && (
+              <div class="alert alert-error" role="alert">
+                <strong>Error:</strong> {errorMessage()}
+              </div>
+            )}
 
-            <button
-              type="submit"
-              class="btn btn-primary"
-              disabled={isSubmitting()}
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
             >
-              {isSubmitting() ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
+              {/* Hidden fields for Netlify Forms */}
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden">
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
 
-          <div class="contact-info">
-            <h2>Other Ways to Reach Us</h2>
-            <p>
-              <strong>Email:</strong> <a href="mailto:contact@boswelldigitalsolutions.com">contact@boswelldigitalsolutions.com</a>
-            </p>
-            <p>
-              <strong>Location:</strong> Lexington, KY
-            </p>
-            <p>
-              <strong>SDVOSB Certified:</strong> Service-Disabled Veteran-Owned Small Business
-            </p>
-          </div>
-        </section>
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  value={formData().name}
+                  onInput={(e) => setFormData({ ...formData(), name: e.currentTarget.value })}
+                  disabled={isSubmitting()}
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your.email@example.com"
+                  required
+                  value={formData().email}
+                  onInput={(e) => setFormData({ ...formData(), email: e.currentTarget.value })}
+                  disabled={isSubmitting()}
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your project, partnership opportunity, or inquiry..."
+                  required
+                  rows="6"
+                  value={formData().message}
+                  onInput={(e) => setFormData({ ...formData(), message: e.currentTarget.value })}
+                  disabled={isSubmitting()}
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                disabled={isSubmitting()}
+              >
+                {isSubmitting() ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
+
+            <div class="contact-info card mt-xl">
+              <h2 class="h3 mb-md">Other Ways to Reach Us</h2>
+              <div class="grid-2">
+                <div>
+                  <h4 class="h4">Email</h4>
+                  <p>
+                    <a href="mailto:contact@boswelldigitalsolutions.com" class="text-primary">
+                      contact@boswelldigitalsolutions.com
+                    </a>
+                  </p>
+                </div>
+                <div>
+                  <h4 class="h4">Location</h4>
+                  <p>Lexington, Kentucky</p>
+                </div>
+                <div>
+                  <h4 class="h4">Business Type</h4>
+                  <p>Service-Disabled Veteran-Owned Small Business (SDVOSB)</p>
+                </div>
+                <div>
+                  <h4 class="h4">Response Time</h4>
+                  <p>Typically within 24 hours on business days</p>
+                </div>
+              </div>
+              <p class="text-sm text-muted mt-lg">
+                <strong>Free consultation</strong> for government agencies and non-profit
+                organizations
+              </p>
+            </div>
+          </section>
+        </div>
       </main>
     </>
   )
 }
 
 export default Contact
-
