@@ -1,6 +1,48 @@
 import { Component } from 'solid-js'
 
+/**
+ * Site footer component with navigation links and company information
+ *
+ * @component
+ * @description
+ * Displays the site-wide footer with organized sections for Products, Company info,
+ * and Legal links. Includes copyright notice with dynamic year and SDVOSB certification.
+ * Styled with a responsive grid layout that adapts to mobile, tablet, and desktop.
+ *
+ * @features
+ * - Four-column responsive grid layout
+ * - Dynamic copyright year (updates automatically)
+ * - Quick links to all major site sections
+ * - Product directory (Forge Ecosystem apps)
+ * - SDVOSB certification prominently displayed
+ * - Footer-specific styling via `.footer` class
+ *
+ * @sections
+ * 1. **Company Info** - Business description and veteran ownership
+ * 2. **Products** - Links to major applications
+ * 3. **Company** - About, Government, Services, Contact
+ * 4. **Legal** - Privacy Policy and Terms of Service
+ * 5. **Bottom Bar** - Copyright and SDVOSB badge
+ *
+ * @accessibility
+ * - Semantic `<footer>` element
+ * - Proper heading hierarchy (h4 for section titles)
+ * - List markup for navigation links
+ * - Focus-visible states on all links
+ *
+ * @example
+ * ```tsx
+ * // Used in App.tsx layout (renders on all pages)
+ * <Footer />
+ * ```
+ *
+ * @see {@link ../styles/components.css Footer Styles}
+ */
 export const Footer: Component = () => {
+  /**
+   * Current year for copyright notice
+   * Updates automatically on January 1st each year
+   */
   const currentYear = new Date().getFullYear()
 
   return (
