@@ -573,6 +573,130 @@ nav a.active {
 }
 
 /* =========================================================================
+   FORMS
+   ========================================================================= */
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group select:hover {
+  border-color: var(--color-primary);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(10, 42, 67, 0.1);
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled,
+.form-group select:disabled {
+  background: var(--color-background-alt);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Form validation states */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--color-error);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+  border-color: var(--color-success);
+}
+
+/* Contact form specific styles */
+.contact {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.contact h1 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+
+.contact > p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.contact form {
+  margin-bottom: var(--space-xl);
+}
+
+.contact-info {
+  margin-top: var(--space-2xl);
+  padding: var(--space-lg);
+  background: var(--color-background-alt);
+  border-radius: var(--border-radius-lg);
+  border-left: 4px solid var(--color-accent);
+}
+
+.contact-info h2 {
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+}
+
+.contact-info p {
+  margin-bottom: var(--space-sm);
+}
+
+.contact-info a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.contact-info a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+/* =========================================================================
    DIVIDERS
    ========================================================================= */
 
