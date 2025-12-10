@@ -371,7 +371,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: var(--space-md);
-  padding-left: 80px; /* Make room for absolutely positioned logo */
+  padding-left: 90px; /* Make room for larger absolutely positioned logo */
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -397,7 +397,7 @@ header {
 }
 
 .logo-img {
-  height: 48px;
+  height: 60px;
   width: auto;
   display: block;
 }
