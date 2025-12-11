@@ -20,6 +20,17 @@
   [headers.values]
     Content-Security-Policy = "default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' https: data:; connect-src 'self' https://api.netlify.com https://*.netlify.app"
 
+# Force favicon refresh - bypass browser/CDN cache
+[[headers]]
+  for = "/assets/favicon*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/apple-touch-icon.png"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # SPA fallback
 [[redirects]]
   from = "/*"
