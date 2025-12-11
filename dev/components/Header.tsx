@@ -6,11 +6,13 @@ import { A, useLocation } from '@solidjs/router'
  *
  * @component
  * @description
- * Displays the primary navigation bar with links to all main site pages.
- * Automatically highlights the active page link using ARIA attributes for accessibility.
- * Uses SolidJS Router's `<A>` component for client-side navigation without page reloads.
+ * Three-column navigation bar with branding logos and centered navigation links.
+ * Left: Boswell Digital Solutions logo (non-clickable branding)
+ * Center: Navigation links (Home | Apps | Government | About | Contact)
+ * Right: Forge Ecosystem icon (non-clickable branding)
  *
  * @features
+ * - Three-column layout with balanced spacing
  * - Automatic active link detection using current route
  * - ARIA `aria-current="page"` for screen reader accessibility
  * - Client-side navigation (no page refresh)
@@ -22,6 +24,7 @@ import { A, useLocation } from '@solidjs/router'
  * - Active page indicated with `aria-current="page"`
  * - Focus-visible states for keyboard navigation
  * - High contrast focus indicators (Service Bronze outline)
+ * - Logos marked with role="img" for non-interactive branding
  *
  * @example
  * ```tsx
@@ -47,9 +50,12 @@ export const Header: Component = () => {
   return (
     <header>
       <div class="header-container">
-        <A href="/" class="header-logo" aria-label="Boswell Digital Solutions Home">
+        {/* Left: Boswell Digital Solutions logo (non-clickable branding) */}
+        <div class="header-logo-left" role="img" aria-label="Boswell Digital Solutions">
           <img src="/assets/sigicon.svg" alt="Boswell Digital Solutions" class="logo-img" />
-        </A>
+        </div>
+
+        {/* Center: Navigation links */}
         <nav class="header-nav">
           <A href="/" end activeClass="active" aria-current={isActive('/') ? 'page' : undefined}>
             Home
@@ -57,22 +63,21 @@ export const Header: Component = () => {
           <A href="/apps" activeClass="active" aria-current={isActive('/apps') ? 'page' : undefined}>
             Apps
           </A>
-          <A href="/about" activeClass="active" aria-current={isActive('/about') ? 'page' : undefined}>
-            About
-          </A>
           <A href="/government" activeClass="active" aria-current={isActive('/government') ? 'page' : undefined}>
             Government
           </A>
-          <A href="/services" activeClass="active" aria-current={isActive('/services') ? 'page' : undefined}>
-            Services
-          </A>
-          <A href="/portfolio" activeClass="active" aria-current={isActive('/portfolio') ? 'page' : undefined}>
-            Portfolio
+          <A href="/about" activeClass="active" aria-current={isActive('/about') ? 'page' : undefined}>
+            About
           </A>
           <A href="/contact" activeClass="active" aria-current={isActive('/contact') ? 'page' : undefined}>
             Contact
           </A>
         </nav>
+
+        {/* Right: Forge Ecosystem icon (non-clickable branding) */}
+        <div class="header-logo-right" role="img" aria-label="Forge Ecosystem">
+          <img src="/assets/Forge_Ecosystem_icon.png" alt="Forge Ecosystem" class="forge-icon-img" />
+        </div>
       </div>
     </header>
   )
