@@ -77,7 +77,7 @@ export const Header: Component = () => {
         {/* Right: Forge Ecosystem icon with text (non-clickable branding) */}
         <div class="header-logo-right" role="img" aria-label="Forge Ecosystem">
           <img src="/assets/Forge_Ecosystem_icon.png" alt="Forge Ecosystem" class="forge-icon-img" />
-          <span class="forge-text">Forge Ecosystem</span>
+          <span class="forge-text">Forge</span>
         </div>
       </div>
     </header>
