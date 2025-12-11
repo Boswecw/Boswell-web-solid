@@ -367,19 +367,17 @@ header {
 
 .header-container {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  max-width: 1440px;
-  margin: 0 auto;
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
 }
 
-/* Left: Boswell Digital Solutions logo (non-clickable branding) */
+/* Left: Boswell Digital Solutions logo (non-clickable branding) - Far left edge */
 .header-logo-left {
   display: flex;
   align-items: center;
-  justify-self: start;
+  padding-left: var(--space-md);
 }
 
 .logo-img {
@@ -388,11 +386,12 @@ header {
   display: block;
 }
 
-/* Right: Forge Ecosystem icon (non-clickable branding) */
+/* Right: Forge Ecosystem icon with text (non-clickable branding) - Far right edge */
 .header-logo-right {
   display: flex;
   align-items: center;
-  justify-self: end;
+  gap: var(--space-sm);
+  padding-right: var(--space-md);
 }
 
 .forge-icon-img {
@@ -401,10 +400,18 @@ header {
   display: block;
 }
 
+.forge-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
 .header-nav {
   display: flex;
   gap: var(--space-md);
   align-items: center;
+  justify-self: center;
 }
 
 .header-nav a {
@@ -471,6 +478,11 @@ header {
   .logo-img,
   .forge-icon-img {
     height: 40px;
+  }
+
+  /* Hide text on mobile, keep icon only */
+  .forge-text {
+    display: none;
   }
 }
 
