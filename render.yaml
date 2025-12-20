@@ -1,0 +1,30 @@
+# Render Blueprint for Boswell Digital Solutions
+# Static Site deployment
+
+services:
+  - type: web
+    name: boswell-digital-solutions
+    runtime: static
+    buildCommand: npm install -g pnpm && pnpm install && pnpm run build
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), microphone=(), geolocation=()
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains; preload
+    routes:
+      # SPA fallback - serve index.html for all routes
+      - type: rewrite
+        source: /*
+        destination: /index.html
