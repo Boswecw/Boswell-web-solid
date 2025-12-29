@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite serve dev --port 3000",
-    "build": "NODE_ENV=production vite build dev --outDir ../dist --emptyOutDir",
+    "build": "NODE_ENV=production vite build --outDir dist --emptyOutDir",
     "start": "node server/index.cjs",
     "preview": "vite preview --outDir dist",
     "format": "prettier --write .",

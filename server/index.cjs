@@ -32,6 +32,7 @@ const loadEnvFile = () => {
 loadEnvFile()
 
 const PORT = Number(process.env.PORT) || 3000
+const HOST = '0.0.0.0'
 const DIST_DIR = path.resolve(__dirname, '../dist')
 const DATA_DIR = path.resolve(__dirname, '../data')
 const SUBMISSIONS_FILE = path.join(DATA_DIR, 'contact-submissions.jsonl')
@@ -328,8 +329,8 @@ const server = http.createServer((req, res) => {
     return sendError(res, 400, 'invalid_request', 'Invalid request.')
   }
 
-  if (req.url.startsWith('/healthz')) {
-    if (req.method !== 'GET') {
+  if (req.url.startsWith('/health')) {
+    if (req.method !== 'GET' && req.method !== 'HEAD') {
       return sendError(res, 405, 'method_not_allowed', 'Method not allowed.')
     }
     return sendJson(res, 200, { ok: true })
@@ -377,6 +378,6 @@ const server = http.createServer((req, res) => {
   return serveStatic(req, res)
 })
 
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
+server.listen(PORT, HOST, () => {
+  console.log(`Server listening on ${HOST}:${PORT}`)
 })

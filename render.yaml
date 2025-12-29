@@ -4,7 +4,7 @@ services:
     runtime: node
     buildCommand: npm install -g pnpm && pnpm install && pnpm run build
     startCommand: node server/index.cjs
-    healthCheckPath: /healthz
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
