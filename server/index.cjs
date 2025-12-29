@@ -341,6 +341,24 @@ const server = http.createServer((req, res) => {
     return sendError(res, 400, 'invalid_request', 'Invalid request.')
   }
 
+  if (req.url.startsWith('/debug/dist')) {
+    if (req.method !== 'GET') {
+      return sendError(res, 405, 'method_not_allowed', 'Method not allowed.')
+    }
+    const indexPath = path.join(DIST_DIR, 'index.html')
+    const distExists = fs.existsSync(DIST_DIR)
+    const files = distExists ? fs.readdirSync(DIST_DIR).slice(0, 50) : []
+    return sendJson(res, 200, {
+      note: 'TEMP DEBUG ENDPOINT - REMOVE',
+      dist_dir: DIST_DIR,
+      dist_exists: distExists,
+      index_exists: fs.existsSync(indexPath),
+      files,
+      cwd: process.cwd(),
+      __dirname,
+    })
+  }
+
   if (req.url.startsWith('/health')) {
     if (req.method !== 'GET' && req.method !== 'HEAD') {
       return sendError(res, 405, 'method_not_allowed', 'Method not allowed.')
