@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Forge Brand Charter — The engineering standard behind our products, focused on clarity, control, and long-term trust.">
+    <title>Forge Brand Charter</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0a0a;
+            --text: #e0e0e0;
+            --text-dim: #9a9a9a;
+            --accent: #4a4a4a;
+            --border: #2a2a2a;
+            --link: #b8b8b8;
+            --link-hover: #ffffff;
+        }
+        html { font-size: 16px; line-height: 1.6; scroll-behavior: smooth; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            padding: 2rem 1rem;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        p { margin-bottom: 1rem; }
+        strong { font-weight: 600; color: var(--text); }
+        em { font-style: italic; color: var(--text-dim); }
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+        .metadata {
+            color: var(--text-dim);
+            font-size: 0.875rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .metadata p { margin-bottom: 0.25rem; }
+        ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.5rem; }
+        .comparison { margin: 2rem 0; }
+        .approach { margin-bottom: 1.5rem; }
+        .approach h4 { font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem; }
+        .approach ul { list-style: none; margin-left: 0; }
+        .approach li:before { content: "•"; color: var(--text-dim); margin-right: 0.5rem; }
+        .seal {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .seal .anvil {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .seal .tagline { font-size: 1.125rem; color: var(--text-dim); font-style: italic; }
+        .version-footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.875rem;
+        }
+        .version-footer p { margin-bottom: 0.5rem; }
+        .qualification-questions {
+            background: rgba(74, 74, 74, 0.1);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .qualification-questions ul { margin-left: 0; list-style: none; }
+        .qualification-questions li:before { content: "→"; color: var(--text-dim); margin-right: 0.75rem; }
+        .products-list { margin: 1.5rem 0; }
+        .product-item { margin-bottom: 1rem; }
+        .product-name { font-weight: 600; font-size: 1.125rem; }
+        .product-desc { color: var(--text-dim); font-style: italic; }
+        @media (max-width: 640px) {
+            html { font-size: 15px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.25rem; }
+            body { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Forge Brand Charter v1</h1>
+        <div class="metadata">
+            <p><strong>Status:</strong> Published Foundation</p>
+            <p><strong>Effective:</strong> January 2026</p>
+            <p><strong>Scope:</strong> All products bearing the Forge mark</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="philosophy">
+            <h2>Philosophy</h2>
+            <p>Forge is not a product. It is a standard.</p>
+            <p>Software built under Forge principles is designed with the assumption that it will be used for years—not months. That users will depend on it. That trust, once earned, must be maintained through disciplined engineering rather than clever marketing.</p>
+            <p>Forge represents a return to foundational principles:</p>
+            <ul>
+                <li><strong>Durability over novelty</strong> — tools are built to last, not to impress</li>
+                <li><strong>Clarity over cleverness</strong> — behavior should be predictable and inspectable</li>
+                <li><strong>Control over convenience</strong> — automation serves intent, never replaces it</li>
+                <li><strong>Accountability over autonomy</strong> — if software acts, a human must understand why</li>
+            </ul>
+            <p>The anvil is our symbol because it represents controlled force applied with precision. What is forged must withstand pressure. What carries our mark must be worthy of it.</p>
+        </section>
+
+        <section id="promise">
+            <h2>Promise</h2>
+            <p>When you use software bearing the Forge mark, you can expect:</p>
+
+            <h3>Transparent AI Behavior</h3>
+            <p>AI assists, proposes, and accelerates—but never silently overrides the user or acts without clear accountability. You will always know when AI is involved and what it contributed.</p>
+
+            <h3>Conservative Defaults</h3>
+            <p>Forge products default to safety, clarity, and user control. Automation is opt-in. Irreversible actions require confirmation. Surprise is treated as a design failure.</p>
+
+            <h3>Inspectable Construction</h3>
+            <p>You can examine what the software does, why it does it, and how to change it. Forge products document their behavior and provide visibility into their decision-making, treating documentation as a contract rather than commentary.</p>
+
+            <h3>Long-term Stability</h3>
+            <p>Forge-built software is designed for sustained professional use. Updates improve without disrupting. Features mature rather than churn. Your workflows remain stable.</p>
+        </section>
+
+        <section id="difference">
+            <h2>Difference</h2>
+            <p>Most AI-powered software optimizes for speed, novelty, or apparent intelligence. Forge optimizes for something else: <strong>trust through discipline</strong>.</p>
+
+            <h3>How Forge Treats AI Differently</h3>
+            <div class="comparison">
+                <div class="approach">
+                    <h4>Industry Standard Approach:</h4>
+                    <ul>
+                        <li>AI acts autonomously to "help" the user</li>
+                        <li>Cleverness is prioritized over predictability</li>
+                        <li>Behavior adapts silently to maximize engagement</li>
+                        <li>Speed justifies reduced transparency</li>
+                    </ul>
+                </div>
+                <div class="approach">
+                    <h4>Forge Approach:</h4>
+                    <ul>
+                        <li>AI operates under clear user intent and constraints</li>
+                        <li>Predictability is prioritized over cleverness</li>
+                        <li>Behavior remains consistent and inspectable</li>
+                        <li>Transparency is never traded for convenience</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>This difference is architectural, not cosmetic. It cannot be added late, wrapped around a model, or bolted on for compliance.</p>
+            <p>The result is software that feels <strong>calm, deliberate, and professional</strong> rather than impressive or magical.</p>
+        </section>
+
+        <section id="standards">
+            <h2>Standards</h2>
+            <p>For a product to carry the Forge mark, it must uphold these non-negotiable standards:</p>
+
+            <h3>1. Inspectability Requirement</h3>
+            <p>If an action cannot be inspected, understood, or reversed by the user, it does not ship. Hidden automation is a violation of trust.</p>
+
+            <h3>2. Intent Preservation</h3>
+            <p>AI may propose, but final decisions rest with the user. Software must never act on the user's behalf without explicit authorization, especially for irreversible operations.</p>
+
+            <h3>3. Conservative Execution</h3>
+            <p>Defaults favor safety over convenience. Destructive actions require confirmation. Automation is opt-in. Uncertainty results in escalation to the user, not autonomous guessing.</p>
+
+            <h3>4. Long-term Accountability</h3>
+            <p>Features are designed to remain stable and useful for years. Breaking changes are minimized. Documentation is maintained as a contract, not an afterthought.</p>
+
+            <h3>5. No Hidden Intelligence</h3>
+            <p>When AI contributes to a result, that contribution must be visible and attributable. Users must be able to distinguish between their own work and AI assistance.</p>
+        </section>
+
+        <section id="qualification">
+            <h2>Qualification</h2>
+            <p>Not every AI-powered tool belongs under the Forge standard. Before a product may carry the anvil mark, it must answer these questions affirmatively:</p>
+
+            <div class="qualification-questions">
+                <ul>
+                    <li>Can a user inspect every automated action?</li>
+                    <li>Does the software fail safely when uncertain?</li>
+                    <li>Are defaults conservative rather than aggressive?</li>
+                    <li>Is AI behavior clearly separated from user intent?</li>
+                    <li>Would this tool remain trustworthy after years of use?</li>
+                </ul>
+            </div>
+
+            <p>If any answer is "no," the product does not earn the mark—regardless of technical sophistication or market opportunity.</p>
+            <p><strong>The anvil is not given. It is earned.</strong></p>
+        </section>
+
+        <section id="products">
+            <h2>Products</h2>
+            <p>The following products are built under Forge standards:</p>
+
+            <div class="products-list">
+                <div class="product-item">
+                    <div class="product-name">VibeForge</div>
+                    <div class="product-desc">Prompt engineering workbench for Linux</div>
+                    <div class="product-desc">Launching February 2026</div>
+                </div>
+            </div>
+
+            <p>Additional products are under development and will be announced when they meet Forge qualification standards.</p>
+        </section>
+
+        <section id="continuity">
+            <h2>Continuity</h2>
+            <p>Forge is not a roadmap. It is a commitment.</p>
+            <p>We do not promise features, timelines, or market expansion. We promise that anything bearing the Forge mark will uphold these standards—today, next year, and five years from now.</p>
+            <p>Software should endure. Trust should compound. Work should remain stable.</p>
+            <p>That is what Forge means.</p>
+        </section>
+
+        <div class="seal">
+            <span class="anvil">⚒</span>
+            <div class="tagline">Forge-built — designed to endure</div>
+        </div>
+
+        <footer class="version-footer">
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p><strong>Published:</strong> January 2026</p>
+            <p><strong>Maintained by:</strong> Boswell Digital Solutions LLC</p>
+            <p><strong>License:</strong> This charter is published under <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a> — you may share it freely, but not modify it.</p>
+        </footer>
+    </main>
+
+</body>
+</html>

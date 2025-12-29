@@ -26,6 +26,10 @@
   --color-accent-light: #DBBB8F;      /* Lighter for hover */
   --color-accent-dark: #BBAA5F;       /* Darker for emphasis */
 
+  /* Forge Mark */
+  --forge-gold: #C9A24D;              /* Muted brass */
+  --forge-ink: var(--color-text);
+
   /* Support - Forest Green (Federal Credibility) */
   --color-support: #2E5A3F;           /* Forest Green */
   --color-support-light: #3E6A4F;     /* Lighter */

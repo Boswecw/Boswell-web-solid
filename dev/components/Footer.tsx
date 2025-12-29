@@ -1,4 +1,5 @@
 import { Component } from 'solid-js'
+import { ForgeSeal } from './ForgeSeal'
 
 /**
  * Site footer component with navigation links and company information
@@ -50,29 +51,26 @@ export const Footer: Component = () => {
       <div class="footer-content container-center max-w-1280">
         <div class="footer-grid">
           <div class="footer-section">
-            <h4 class="h4">Boswell Digital Solutions</h4>
-            <p class="text-sm text-muted">
-              Veteran-owned SaaS studio building human-centered AI and web software.
-            </p>
-            <p class="text-sm text-muted mt-sm">
-              Built in Lexington, Kentucky by a U.S. Navy Veteran.
-            </p>
+            <div class="footer-brand">
+              <ForgeSeal variant="decorative" class="footer-seal" />
+              <h4 class="h4">Boswell Digital Solutions</h4>
+              <p class="text-sm text-muted">
+                Veteran-owned studio delivering governed software products and refactors.
+              </p>
+              <p class="text-sm text-muted mt-sm">
+                Built in Lexington, Kentucky by a U.S. Navy Veteran.
+              </p>
+            </div>
           </div>
 
           <div class="footer-section">
             <h4 class="h4">Products</h4>
             <ul class="footer-links">
               <li>
-                <a href="/apps/vibeforge">VibeForge</a>
+                <a href="/products/vibeforge">VibeForge 1.0</a>
               </li>
               <li>
-                <a href="/apps/authorforge">AuthorForge</a>
-              </li>
-              <li>
-                <a href="/apps/leopold">Leopold</a>
-              </li>
-              <li>
-                <a href="/apps/livy">Livy</a>
+                <a href="/products">Products overview</a>
               </li>
             </ul>
           </div>
@@ -84,13 +82,16 @@ export const Footer: Component = () => {
                 <a href="/about">About</a>
               </li>
               <li>
-                <a href="/government">Government</a>
+                <a href="/forge/charter">Forge Charter</a>
               </li>
               <li>
-                <a href="/services">Services</a>
+                <a href="/support">Support</a>
               </li>
               <li>
                 <a href="/contact">Contact</a>
+              </li>
+              <li>
+                <a href="/intake">Engagement Request</a>
               </li>
             </ul>
           </div>

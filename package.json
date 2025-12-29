@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "vite serve dev --port 3000",
     "build": "NODE_ENV=production vite build dev --outDir ../dist --emptyOutDir",
+    "start": "node server/index.cjs",
     "preview": "vite preview --outDir dist",
     "format": "prettier --write .",
     "lint": "eslint dev/**/*.{js,ts,tsx,jsx}"
@@ -27,5 +28,8 @@
   "packageManager": "pnpm@9.1.1",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.12"
   }
 }

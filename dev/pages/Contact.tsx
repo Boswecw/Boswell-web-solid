@@ -21,24 +21,32 @@ const Contact: Component = () => {
 
     const form = e.target as HTMLFormElement
     const data = new FormData(form)
+    const payload = Object.fromEntries(data.entries())
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data as any).toString()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       })
 
-      if (response.ok) {
+      const result = await response.json().catch(() => null)
+
+      if (response.ok && result?.ok) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', message: '' })
         form.reset()
       } else {
-        throw new Error('Form submission failed')
+        const message = result?.error?.message || 'Form submission failed'
+        throw new Error(message)
       }
     } catch (error) {
       setSubmitStatus('error')
-      setErrorMessage('Failed to send message. Please try again or email us directly at contact@boswelldigitalsolutions.com')
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Failed to send message. Please try again or email us directly at contact@boswelldigitalsolutions.com'
+      )
       console.error('Form submission error:', error)
     } finally {
       setIsSubmitting(false)
@@ -55,42 +63,21 @@ const Contact: Component = () => {
       />
       <main id="main">
         <div class="hero">
-          <h1>Get In Touch</h1>
-          <p class="text-lg">
-            Direct access to Charles Boswell, Founder & Principal Engineer.
-          </p>
+          <h1>Contact</h1>
+          <p class="text-lg">Use this form for scoped product or service inquiries.</p>
           <p class="text-sm text-muted mt-sm">
-            Responsive to partnership inquiries, pilot projects, custom development, and government
-            engagements.
+            Responses are handled by the founder and principal engineer.
           </p>
         </div>
 
         <div class="container-center max-w-960">
           <section class="contact">
             <div class="card mb-xl">
-              <h2 class="h3 mb-md">Why Direct Access Matters</h2>
-              <p class="mb-md">
-                When you contact Boswell Digital Solutions, you're reaching the founder and
-                principal engineer—not an account manager or sales team. This means:
+              <h2 class="h3 mb-md">Request details</h2>
+              <p>
+                Provide scope, timing, and relevant links. If you are asking about a product,
+                include the product name and page.
               </p>
-              <ul class="list-bulleted">
-                <li>
-                  <strong>Clear Technical Discussion:</strong> Immediate technical understanding
-                  and honest assessment of what's possible
-                </li>
-                <li>
-                  <strong>Rapid Response:</strong> No layers of bureaucracy, just direct
-                  communication and quick answers
-                </li>
-                <li>
-                  <strong>Accountability:</strong> The person you talk to is the person who builds
-                  the solution
-                </li>
-                <li>
-                  <strong>Federal Experience:</strong> Direct conversation with someone who
-                  understands government operations and requirements
-                </li>
-              </ul>
             </div>
 
             {submitStatus() === 'success' && (
@@ -105,15 +92,7 @@ const Contact: Component = () => {
               </div>
             )}
 
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              onSubmit={handleSubmit}
-            >
-              {/* Hidden fields for Netlify Forms */}
-              <input type="hidden" name="form-name" value="contact" />
+            <form name="contact" method="POST" onSubmit={handleSubmit}>
               <p class="hidden">
                 <label>
                   Don't fill this out if you're human: <input name="bot-field" />
@@ -192,13 +171,9 @@ const Contact: Component = () => {
                 </div>
                 <div>
                   <h4 class="h4">Response Time</h4>
-                  <p>Typically within 24 hours on business days</p>
+                  <p>Typically within two business days</p>
                 </div>
               </div>
-              <p class="text-sm text-muted mt-lg">
-                <strong>Free consultation</strong> for government agencies and non-profit
-                organizations
-              </p>
             </div>
           </section>
         </div>

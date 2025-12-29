@@ -58,7 +58,7 @@ Implement all recommendations from the Comprehensive Due Diligence Audit across 
 **Security**
 - Dependencies: ⚠️ Needs `npm audit`
 - XSS prevention: ✅ Solid.js has built-in protection
-- HTTPS: ✅ Deployed (assuming Netlify/Vercel)
+- HTTPS: ✅ Deployed (assuming Render)
 - Security headers: ⚠️ Needs configuration
 
 **SEO**
@@ -795,7 +795,7 @@ Sitemap: https://boswelldigitalsolutions.com/sitemap.xml
 
 #### 3.4 Configure Security Headers
 
-**If using Netlify, create `netlify.toml`:**
+**If using Render, create `render.yaml`:**
 
 ```toml
 [[headers]]
@@ -1050,7 +1050,7 @@ Target Lighthouse scores:
 
 ## 🚢 Deployment
 
-Deployed to Netlify/Vercel with:
+Deployed to Render with:
 - Automatic builds on git push
 - Security headers configured
 - HTTPS/SSL enabled

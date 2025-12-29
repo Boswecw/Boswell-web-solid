@@ -857,3 +857,114 @@ select:focus-visible,
     transform: none;
   }
 }
+
+/* =========================================================================
+   FORGE SEAL
+   ========================================================================= */
+
+.forge-seal {
+  color: var(--forge-ink);
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+}
+
+.forge-seal--certified {
+  color: var(--forge-gold);
+}
+
+.forge-seal--tiny {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.forge-seal--decorative {
+  width: 48px;
+  height: 48px;
+}
+
+.forge-seal--tagline {
+  height: 32px;
+  width: auto;
+}
+
+.forge-quality {
+  display: grid;
+  gap: var(--space-md);
+  align-items: center;
+  margin: var(--space-xl) 0;
+}
+
+.forge-quality__seal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.forge-quality__content {
+  max-width: 720px;
+}
+
+.quality-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.quality-header .forge-seal {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .forge-quality {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.footer-brand {
+  display: block;
+  max-width: 320px;
+}
+
+.footer-seal {
+  flex-shrink: 0;
+}
+
+.form-error {
+  margin-top: var(--space-xs);
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+}
+
+.form-legend {
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-base);
+}
+
+.checkbox-row input {
+  margin-top: 0.2rem;
+}
+
+.intake-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--space-lg);
+}

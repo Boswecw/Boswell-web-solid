@@ -43,8 +43,11 @@ export const Header: Component = () => {
    * @param {string} path - The route path to check
    * @returns {boolean} True if the path matches the current location
    */
-  const isActive = (path: string) => {
-    return location.pathname === path
+  const isActive = (path: string, exact = false) => {
+    if (exact) {
+      return location.pathname === path
+    }
+    return location.pathname === path || location.pathname.startsWith(`${path}/`)
   }
 
   return (
@@ -57,14 +60,32 @@ export const Header: Component = () => {
 
         {/* Center: Navigation links */}
         <nav class="header-nav">
-          <A href="/" end activeClass="active" aria-current={isActive('/') ? 'page' : undefined}>
+          <A href="/" end activeClass="active" aria-current={isActive('/', true) ? 'page' : undefined}>
             Home
           </A>
-          <A href="/apps" activeClass="active" aria-current={isActive('/apps') ? 'page' : undefined}>
-            Apps
+          <A
+            href="/products"
+            activeClass="active"
+            aria-current={isActive('/products') ? 'page' : undefined}
+          >
+            Products
           </A>
-          <A href="/government" activeClass="active" aria-current={isActive('/government') ? 'page' : undefined}>
-            Government
+          <A
+            href="/how-we-help"
+            activeClass="active"
+            aria-current={isActive('/how-we-help') ? 'page' : undefined}
+          >
+            How We Help
+          </A>
+          <A href="/shop" activeClass="active" aria-current={isActive('/shop') ? 'page' : undefined}>
+            Shop
+          </A>
+          <A
+            href="/forge/charter"
+            activeClass="active"
+            aria-current={isActive('/forge/charter', true) ? 'page' : undefined}
+          >
+            Forge Charter
           </A>
           <A href="/about" activeClass="active" aria-current={isActive('/about') ? 'page' : undefined}>
             About

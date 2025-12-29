@@ -14,38 +14,80 @@ const defaultOgImage = `${baseUrl}/og-cover.jpg`
 
 export const META_CONFIG: MetaConfig = {
   home: {
-    title: 'Boswell Digital Solutions — Veteran-Owned SaaS Studio',
+    title: 'Boswell Digital Solutions — Public Trust Surface',
     description:
-      'Building human-centered AI and web software for developers, authors, and public agencies. Veteran-owned, government-grade, AI-powered tools designed from real field and federal experience.',
+      'Veteran-owned studio delivering governed software products, bounded storefronts, and clear delivery commitments.',
     url: baseUrl,
     ogImage: defaultOgImage,
   },
-  apps: {
-    title: 'Applications — Boswell Digital Solutions',
+  products: {
+    title: 'Products — Boswell Digital Solutions',
     description:
-      'Explore the Forge Ecosystem: AI-powered tools for developers, authors, and public agencies. Built with precision, discipline, and a focus on genuinely helping people.',
-    url: `${baseUrl}/apps`,
+      'Product overview with conservative status statements and explicit boundaries.',
+    url: `${baseUrl}/products`,
     ogImage: defaultOgImage,
   },
-  services: {
-    title: 'Services — Boswell Digital Solutions',
+  vibeforge: {
+    title: 'VibeForge 1.0 — Boswell Digital Solutions',
     description:
-      'Web development, AI automation, and digital solutions for small businesses. Veteran-owned expertise delivering government-grade quality for commercial clients.',
-    url: `${baseUrl}/services`,
+      'VibeForge 1.0 status, scope, and boundaries. Not finished and governed by Forge:SMITH.',
+    url: `${baseUrl}/products/vibeforge`,
     ogImage: defaultOgImage,
   },
-  portfolio: {
-    title: 'Portfolio — Boswell Digital Solutions',
+  shop: {
+    title: 'Shop — Boswell Digital Solutions',
     description:
-      'See our latest projects and case studies showcasing our expertise in web development, AI automation, and digital transformation.',
-    url: `${baseUrl}/portfolio`,
+      'Bounded storefront for limited digital resources and services.',
+    url: `${baseUrl}/shop`,
+    ogImage: defaultOgImage,
+  },
+  forgeCharter: {
+    title: 'Forge Charter — Boswell Digital Solutions',
+    description:
+      'Public charter outlining product boundaries, governance intent, and communication standards.',
+    url: `${baseUrl}/forge/charter`,
+    ogImage: defaultOgImage,
+  },
+  forgeEcosystem: {
+    title: 'Forge Ecosystem — Boswell Digital Solutions',
+    description:
+      'Overview of the Forge Ecosystem and how the tools work together under human oversight.',
+    url: `${baseUrl}/forge/ecosystem`,
+    ogImage: defaultOgImage,
+  },
+  about: {
+    title: 'About — Boswell Digital Solutions',
+    description:
+      'Background, governance stance, and operating approach for Boswell Digital Solutions.',
+    url: `${baseUrl}/about`,
     ogImage: defaultOgImage,
   },
   contact: {
     title: 'Contact — Boswell Digital Solutions',
     description:
-      'Get in touch with us to discuss your project and digital needs. Located in Lexington, Kentucky. SDVOSB-certified.',
+      'Contact Boswell Digital Solutions for scoped product and service inquiries.',
     url: `${baseUrl}/contact`,
+    ogImage: defaultOgImage,
+  },
+  support: {
+    title: 'Support — Boswell Digital Solutions',
+    description:
+      'Support information, response windows, and how to request help.',
+    url: `${baseUrl}/support`,
+    ogImage: defaultOgImage,
+  },
+  howWeHelp: {
+    title: 'How We Help — Boswell Digital Solutions',
+    description:
+      'Disciplined delivery for websites and custom applications with clear scope and human accountability.',
+    url: `${baseUrl}/how-we-help`,
+    ogImage: defaultOgImage,
+  },
+  intake: {
+    title: 'Engagement Request — Boswell Digital Solutions',
+    description:
+      'Client intake form for scoped website and application engagements.',
+    url: `${baseUrl}/intake`,
     ogImage: defaultOgImage,
   },
   privacy: {
@@ -72,7 +114,7 @@ export const ORGANIZATION_SCHEMA = {
   url: baseUrl,
   logo: `${baseUrl}/logo.png`,
   description:
-    'Veteran-owned SaaS studio building human-centered AI and web software for developers, authors, and public agencies.',
+    'Veteran-owned studio delivering governed software products, bounded storefronts, and careful refactors.',
   founder: {
     '@type': 'Person',
     name: 'Charles Boswell',
