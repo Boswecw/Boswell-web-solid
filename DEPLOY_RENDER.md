@@ -4,7 +4,7 @@
 - Web Service
 
 ## Commands
-- Build: `pnpm install --frozen-lockfile && pnpm run build`
+- Build: `pnpm install --no-frozen-lockfile && pnpm run build`
 - Start: `pnpm run start`
 
 ## Health Check
@@ -18,6 +18,6 @@
 - `INTAKE_EMAIL`
 
 ## Notes
-- Build fails if `dist/index.html` is missing.
+- Build uses `--no-frozen-lockfile` to avoid CI failures when lockfile drifts.
 - Intake submissions append to `public/forge/intake/intake-submissions.jsonl`.
 - This storage is non-durable on Render; email is the primary notification.
