@@ -303,12 +303,20 @@ const handleIntake = async (req, res, body) => {
 
 const serveStatic = (req, res) => {
   const urlPath = req.url ? req.url.split('?')[0] : '/'
-  const safePath = path.normalize(urlPath).replace(/^\.\.(\/|\\)/, '')
+  const safePath = path
+    .normalize(urlPath)
+    .replace(/^(\.\.(\/|\\))+/, '')
+    .replace(/^\/+/, '')
   const filePath = path.join(DIST_DIR, safePath)
 
   const serveFile = (resolvedPath) => {
     fs.readFile(resolvedPath, (error, data) => {
       if (error) {
+        console.warn('[static] readFile failed', {
+          resolvedPath,
+          code: error.code,
+          message: error.message,
+        })
         return sendError(res, 404, 'not_found', 'Resource not found.')
       }
       const ext = path.extname(resolvedPath).toLowerCase()
