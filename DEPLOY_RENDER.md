@@ -18,5 +18,6 @@
 - `INTAKE_EMAIL`
 
 ## Notes
+- Build fails if `dist/index.html` is missing.
 - Intake submissions append to `public/forge/intake/intake-submissions.jsonl`.
 - This storage is non-durable on Render; email is the primary notification.
