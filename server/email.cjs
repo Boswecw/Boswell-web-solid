@@ -1,23 +1,33 @@
 const nodemailer = require('nodemailer')
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT ?? 587),
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-})
+let warnedMissingConfig = false
+
+const buildTransport = () => {
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT ?? 587),
+    secure: false,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  })
+}
 
 const sendIntakeEmail = async (data) => {
   const to = process.env.INTAKE_EMAIL
+  const hasSmtpConfig =
+    process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS && process.env.SMTP_PORT
 
-  if (!to) {
-    console.warn('INTAKE_EMAIL not set; skipping email send.')
+  if (!to || !hasSmtpConfig) {
+    if (!warnedMissingConfig) {
+      console.warn('Intake email config missing; skipping email send.')
+      warnedMissingConfig = true
+    }
     return
   }
 
+  const transporter = buildTransport()
   await transporter.sendMail({
     from: `"BDS Intake" <${process.env.SMTP_USER}>`,
     to,
