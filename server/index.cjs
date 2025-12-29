@@ -41,6 +41,10 @@ const INTAKE_FALLBACK_DIR = path.resolve(__dirname, '../.tmp')
 const INTAKE_PRIMARY_FILE = path.join(INTAKE_PRIMARY_DIR, 'intake-submissions.jsonl')
 const INTAKE_FALLBACK_FILE = path.join(INTAKE_FALLBACK_DIR, 'intake-submissions.jsonl')
 
+const DIST_INDEX = path.join(DIST_DIR, 'index.html')
+console.log('DIST_DIR', DIST_DIR)
+console.log('DIST_INDEX_EXISTS', fs.existsSync(DIST_INDEX))
+
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000
 const RATE_LIMIT_MAX = 5
 const rateLimit = new Map()

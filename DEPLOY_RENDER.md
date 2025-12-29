@@ -1,13 +1,14 @@
 # Render Deployment
 
-## Web Service Configuration
-- Build Command: `pnpm install --frozen-lockfile && pnpm run build`
-- Start Command: `pnpm run start`
-- Health Check Path: `/health`
+## Render Type
+- Web Service
 
-## Build Output
-- Vite outputs to `dist/` in the repo root.
-- The Node server serves static assets from `dist/`.
+## Commands
+- Build: `pnpm install --frozen-lockfile && pnpm run build`
+- Start: `pnpm run start`
+
+## Health Check
+- Path: `/health`
 
 ## Required Environment Variables
 - `SMTP_HOST`
@@ -17,4 +18,5 @@
 - `INTAKE_EMAIL`
 
 ## Notes
-- Intake submissions append to `public/forge/intake/intake-submissions.jsonl` (ephemeral disk on Render).
+- Intake submissions append to `public/forge/intake/intake-submissions.jsonl`.
+- This storage is non-durable on Render; email is the primary notification.
