@@ -1,90 +1,39 @@
 import { Component, JSX } from 'solid-js'
 
 /**
- * Props for the Section component
+ * Shared section wrapper that mirrors the Home page rhythm.
  */
 interface SectionProps {
-  /** Optional section heading (h2) */
+  /** Optional h2 heading text */
   title?: string
-  /** Optional subtitle text displayed below title */
+  /** Optional descriptive subtitle below the heading */
   subtitle?: string
-  /** Content to render inside the section */
+  /** Section body content */
   children: JSX.Element
-  /** Optional HTML id attribute for anchor links */
+  /** Anchor id for intra-page links */
   id?: string
-  /** Optional additional CSS classes to apply */
+  /** Additional CSS classes appended to the section */
   class?: string
 }
 
 /**
- * Reusable content section component with optional title and subtitle
+ * Reusable section that enforces the page-system layout (max-width wrapper,
+ * consistent gap, and header treatment).
  *
- * @component
- * @description
- * A flexible section wrapper that provides consistent layout and styling for content blocks.
- * Automatically includes a header area when title or subtitle props are provided.
- * Commonly used to organize page content into distinct visual sections.
- *
- * @param {SectionProps} props - Component props
- * @param {string} [props.title] - Section heading text (renders as h2)
- * @param {string} [props.subtitle] - Subtitle text below heading
- * @param {JSX.Element} props.children - Section content
- * @param {string} [props.id] - HTML id for anchor linking (e.g., #features)
- * @param {string} [props.class] - Additional CSS classes to merge with base `.section` class
- *
- * @features
- * - Consistent section styling across all pages
- * - Optional header area (title + subtitle)
- * - Flexible content slot (children)
- * - Support for anchor links via id prop
- * - Extensible via custom CSS classes
- *
- * @example
- * ```tsx
- * // Basic section with title
- * <Section title="About Us">
- *   <p>Company description here...</p>
- * </Section>
- * ```
- *
- * @example
- * ```tsx
- * // Section with title, subtitle, and custom id
- * <Section
- *   title="Our Products"
- *   subtitle="Innovative solutions for modern challenges"
- *   id="products"
- * >
- *   <ProductGrid />
- * </Section>
- * ```
- *
- * @example
- * ```tsx
- * // Section with custom classes (no title)
- * <Section class="bg-alt py-2xl">
- *   <div>Custom content without header</div>
- * </Section>
- * ```
- *
- * @accessibility
- * - Semantic `<section>` element
- * - Proper heading hierarchy (h2 for titles)
- * - Optional id for skip links and anchor navigation
- *
- * @see {@link ../styles/components.css Section Styles}
- * @see {@link SectionProps} for detailed prop types
+ * @see {@link ../styles/page-system.css}
  */
 export const Section: Component<SectionProps> = props => {
   return (
-    <section class={`section ${props.class || ''}`} id={props.id}>
-      {(props.title || props.subtitle) && (
-        <div class="section-header">
-          {props.title && <h2 class="h2">{props.title}</h2>}
-          {props.subtitle && <p class="section-subtitle">{props.subtitle}</p>}
-        </div>
-      )}
-      {props.children}
+    <section class={`page-section ${props.class || ''}`} id={props.id}>
+      <div class="page-section__wrapper">
+        {(props.title || props.subtitle) && (
+          <header class="page-section__header">
+            {props.title && <h2 class="page-section__title">{props.title}</h2>}
+            {props.subtitle && <p class="page-section__subtitle">{props.subtitle}</p>}
+          </header>
+        )}
+        <div class="page-section__content">{props.children}</div>
+      </div>
     </section>
   )
 }

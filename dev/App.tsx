@@ -26,7 +26,9 @@ const App: Component = () => {
             Skip to main content
           </a>
           <Header />
-          {props.children}
+          <main class="site-main">
+            {props.children}
+          </main>
           <Footer />
         </>
       )}

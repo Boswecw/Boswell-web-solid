@@ -189,63 +189,6 @@
 }
 
 /* =========================================================================
-   SECTIONS
-   ========================================================================= */
-
-.section {
-  padding: var(--space-2xl) 0;
-}
-
-@media (min-width: 768px) {
-  .section {
-    padding: var(--space-3xl) 0;
-  }
-}
-
-.section-header {
-  margin-bottom: var(--space-xl);
-  text-align: center;
-}
-
-.section-title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-  margin-bottom: var(--space-sm);
-}
-
-@media (min-width: 768px) {
-  .section-title {
-    font-size: var(--font-size-4xl);
-  }
-}
-
-.section-subtitle {
-  color: var(--color-text-light);
-  font-size: var(--font-size-lg);
-  margin-top: var(--space-sm);
-  max-width: var(--max-width-md);
-  margin-left: auto;
-  margin-right: auto;
-  line-height: var(--line-height-relaxed);
-}
-
-/* Section variants */
-.section-alt {
-  background: var(--color-background-alt);
-}
-
-.section-primary {
-  background: var(--color-primary);
-  color: white;
-}
-
-.section-primary .section-title,
-.section-primary .section-subtitle {
-  color: white;
-}
-
-/* =========================================================================
    TYPOGRAPHY COMPONENTS
    ========================================================================= */
 
@@ -361,16 +304,30 @@ p {
    ========================================================================= */
 
 header {
-  background: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-modal);
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+  height: var(--nav-h);
+  min-height: var(--nav-h);
+  background: var(--color-nav-bg);
+  border-bottom: 1px solid var(--color-header-divider);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.55);
+  /* graphite slab once anchored to hero, keeps contrast without brightening */
 }
 
 .header-container {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: var(--space-lg);
-  padding: var(--space-md) 0;
+  gap: var(--space-6);
+  padding: 0 var(--space-0);
+  /* keeps nav items vertically centered within the fixed slab */
+  height: inherit;
 }
 
 /* Left: Boswell Digital Solutions logo (non-clickable branding) - Far left edge */
@@ -381,9 +338,17 @@ header {
 }
 
 .logo-img {
-  height: 60px;
+  height: 68px;
   width: auto;
   display: block;
+  transform: translateY(1px);
+  opacity: 1;
+  filter: brightness(1.35) contrast(1.1) saturate(1.2);
+  image-rendering: auto;
+}
+
+.logo-img--large {
+  height: 68px;
 }
 
 /* Right: Forge Ecosystem icon with text (non-clickable branding) - Far right edge */
@@ -392,12 +357,15 @@ header {
   align-items: center;
   gap: var(--space-sm);
   padding-right: var(--space-md);
+  justify-self: end;
+  transform: translateY(1px);
 }
 
 .forge-icon-img {
-  height: 60px;
+  height: 34px;
   width: auto;
   display: block;
+  transform: translateY(1px);
 }
 
 .forge-text {
@@ -409,24 +377,33 @@ header {
 
 .header-nav {
   display: flex;
-  gap: var(--space-md);
+  gap: var(--space-6);
   align-items: center;
   justify-self: center;
+  color: var(--color-nav-gold);
+  /* consistent spacing ensures exact rhythm between links */
 }
 
 .header-nav a {
-  color: var(--color-text);
+  color: var(--color-nav-gold-muted);
   text-decoration: none;
-  padding: var(--space-xs) var(--space-sm);
+  padding: 0.45rem var(--space-5);
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-fast);
   font-weight: var(--font-weight-medium);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  line-height: 1.2;
+  /* toned gold keeps hierarchy beneath the logo while remaining readable */
 }
 
 .header-nav a:hover {
   color: var(--color-primary);
-  background: var(--color-background-alt);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--border-radius-sm);
 }
 
 .header-nav a:focus {
@@ -440,10 +417,16 @@ header {
 
 .header-nav a.active,
 .header-nav a[aria-current="page"] {
-  color: var(--color-primary);
-  background: var(--color-background-alt);
+  color: #0b0b0b;
+  background: #f2efea;
   font-weight: var(--font-weight-semibold);
-  border-bottom: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  border-bottom: 3px solid var(--color-nav-gold);
+  opacity: 1;
+  padding: 0.4rem var(--space-5);
+  letter-spacing: 0.04em;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  /* slightly toned white pill keeps forged feel while high-contrast */
 }
 
 /* Responsive navigation for smaller screens */
@@ -491,10 +474,12 @@ header {
    ========================================================================= */
 
 .footer {
-  background: var(--color-background-alt);
-  border-top: 1px solid var(--color-border);
-  padding: var(--space-2xl) 0 var(--space-lg) 0;
-  margin-top: var(--space-3xl);
+  background: var(--color-nav-bg);
+  border-top: 1px solid var(--color-header-divider);
+  padding: calc(var(--space-2xl) + var(--space-3xl)) 0 var(--space-lg) 0;
+  margin-top: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  /* extend the graphite slab upward to remove the accidental white break */
 }
 
 .footer-content {
@@ -524,7 +509,7 @@ header {
 
 .footer-section h4 {
   margin-bottom: var(--space-md);
-  color: var(--color-text);
+  color: var(--color-footer-heading);
 }
 
 .footer-links {
@@ -538,14 +523,14 @@ header {
 }
 
 .footer-links a {
-  color: var(--color-text-light);
+  color: var(--color-footer-link);
   text-decoration: none;
   font-size: var(--font-size-sm);
   transition: color var(--transition-fast);
 }
 
 .footer-links a:hover {
-  color: var(--color-primary);
+  color: var(--color-nav-gold);
 }
 
 .footer-links a:focus {
@@ -560,14 +545,14 @@ header {
 
 .footer-bottom {
   padding-top: var(--space-lg);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-header-divider);
   text-align: center;
 }
 
 .footer-bottom p {
   margin: var(--space-xs) 0;
   font-size: var(--font-size-sm);
-  color: var(--color-text-light);
+  color: var(--color-footer-legal);
 }
 
 /* =========================================================================
@@ -935,7 +920,53 @@ select:focus-visible,
 }
 
 .footer-seal {
+  background: #f6efd7;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+  /* parchment plate makes the black seal legible without brightening the bar */
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  color: #111;
+}
+
+.footer-seal svg {
+  width: 120px;
+  height: 120px;
+  display: block;
+  /* larger scale keeps the silhouette legible inside the parchment plate */
+  color: #111;
+}
+.footer-seal svg path {
+  fill: #111 !important;
+}
+
+.footer-seal {
+  background: rgba(246, 239, 215, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.55) !important;
+  padding: var(--space-lg) !important;
+  border-radius: var(--border-radius-lg) !important;
+  mix-blend-mode: multiply !important;
+  color: #111 !important;
+  /* ensure the plate stays visible on top of the graphite footer */
+}
+
+.footer-seal svg {
+  width: 140px !important;
+  height: 140px !important;
+  mix-blend-mode: multiply !important;
+  /* larger scale keeps the silhouette legible within the plate */
+}
+
+.footer-seal svg path {
+  fill: currentColor !important;
 }
 
 .form-error {

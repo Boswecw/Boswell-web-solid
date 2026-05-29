@@ -25,6 +25,13 @@
   --color-accent: #CBA86F;            /* Service Bronze */
   --color-accent-light: #DBBB8F;      /* Lighter for hover */
   --color-accent-dark: #BBAA5F;       /* Darker for emphasis */
+  --color-nav-gold: #E4C259;
+  --color-nav-gold-muted: #B69E56;
+  --color-nav-bg: #07070A;
+  --color-header-divider: rgba(255, 255, 255, 0.12);
+  --color-footer-heading: #D9B256;
+  --color-footer-link: #EDEDED;
+  --color-footer-legal: rgba(236, 236, 236, 0.75);
 
   /* Forge Mark */
   --forge-gold: #C9A24D;              /* Muted brass */
@@ -173,6 +180,11 @@
   --z-fixed: 500;
   --z-modal: 1000;
   --z-toast: 1100;
+
+  /* Navigation height metric */
+  --nav-h: 88px;
+  --nav-gap: 12px;
+  --nav-height: var(--nav-h);
 
   /* =========================================================================
      OPACITY - Transparency Levels

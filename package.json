@@ -12,7 +12,8 @@
     "start": "node server/index.cjs",
     "preview": "vite preview --outDir dist",
     "format": "prettier --write .",
-    "lint": "eslint dev/**/*.{js,ts,tsx,jsx}"
+    "lint": "eslint dev/**/*.{js,ts,tsx,jsx}",
+    "qc:stateforge": "bun run tools/qc/stateforge.ts"
   },
   "devDependencies": {
     "@solidjs/router": "^0.15.3",

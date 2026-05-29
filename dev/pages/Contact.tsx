@@ -1,7 +1,64 @@
 import type { Component } from 'solid-js'
-import { createSignal } from 'solid-js'
-import { META_CONFIG } from '../config/meta'
+import { createSignal, For } from 'solid-js'
 import Seo from '../components/Seo'
+import { PageShell } from '../components/PageShell'
+import { PageHero } from '../components/PageHero'
+import { Section } from '../components/Section'
+import { Card } from '../components/Card'
+import { CardGrid } from '../components/CardGrid'
+import { META_CONFIG } from '../config/meta'
+
+const contactMethods = [
+  {
+    title: 'Email',
+    chip: 'Monitored daily',
+    detail: (
+      <>
+        <p>
+          <a href="mailto:contact@boswelldigitalsolutions.com" class="text-primary">
+            contact@boswelldigitalsolutions.com
+          </a>
+        </p>
+        <p class="text-sm text-muted">Replied to within two business days.</p>
+      </>
+    ),
+    action: (
+      <a class="btn btn-outline" href="mailto:contact@boswelldigitalsolutions.com">
+        Email us
+      </a>
+    )
+  },
+  {
+    title: 'Engagement request',
+    chip: 'Scoped intake',
+    detail: (
+      <p>
+        Submit the intake form to describe scope, timing, and acceptance needs. Response happens after
+        a scope review.
+      </p>
+    ),
+    action: (
+      <a class="btn btn-outline" href="/intake">
+        Open intake form
+      </a>
+    )
+  },
+  {
+    title: 'Support',
+    chip: 'Governed support',
+    detail: (
+      <p>
+        Support is handled through the same disciplined governance. Include references to product or
+        service identifiers when submitting.
+      </p>
+    ),
+    action: (
+      <a class="btn btn-outline" href="/support">
+        Support information
+      </a>
+    )
+  }
+]
 
 const Contact: Component = () => {
   const [formData, setFormData] = createSignal({
@@ -61,25 +118,24 @@ const Contact: Component = () => {
         url={META_CONFIG.contact.url}
         image={META_CONFIG.contact.ogImage}
       />
-      <main id="main">
-        <div class="hero">
-          <h1>Contact</h1>
-          <p class="text-lg">Use this form for scoped product or service inquiries.</p>
-          <p class="text-sm text-muted mt-sm">
-            Responses are handled by the founder and principal engineer.
-          </p>
-        </div>
+      <PageShell>
+        <PageHero
+          title="Contact"
+          subtitle="Use this form for scoped product or service inquiries."
+          description="Responses are handled by the founder and principal engineer. Provide scope, timing, and any relevant references."
+        />
 
-        <div class="container-center max-w-960">
-          <section class="contact">
-            <div class="card mb-xl">
-              <h2 class="h3 mb-md">Request details</h2>
-              <p>
-                Provide scope, timing, and relevant links. If you are asking about a product,
-                include the product name and page.
-              </p>
-            </div>
+        <Section title="Request details">
+          <Card>
+            <p class="mb-md">
+              Provide scope, timing, and any relevant links. Mention the product name and page when applicable.
+            </p>
+            <p>If you need support, note the product or service identifier so responses stay focused.</p>
+          </Card>
+        </Section>
 
+        <Section title="Submit a request" subtitle="Tell us what you are trying to accomplish.">
+          <Card>
             {submitStatus() === 'success' && (
               <div class="alert alert-success" role="alert">
                 <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
@@ -93,7 +149,7 @@ const Contact: Component = () => {
             )}
 
             <form name="contact" method="POST" onSubmit={handleSubmit}>
-              <p class="hidden">
+              <p class="sr-only">
                 <label>
                   Don't fill this out if you're human: <input name="bot-field" />
                 </label>
@@ -141,43 +197,25 @@ const Contact: Component = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                class="btn btn-primary btn-lg"
-                disabled={isSubmitting()}
-              >
+              <button type="submit" class="btn btn-primary btn-lg" disabled={isSubmitting()}>
                 {isSubmitting() ? 'Sending...' : 'Send Message'}
               </button>
             </form>
+          </Card>
+        </Section>
 
-            <div class="contact-info card mt-xl">
-              <h2 class="h3 mb-md">Other Ways to Reach Us</h2>
-              <div class="grid-2">
-                <div>
-                  <h4 class="h4">Email</h4>
-                  <p>
-                    <a href="mailto:contact@boswelldigitalsolutions.com" class="text-primary">
-                      contact@boswelldigitalsolutions.com
-                    </a>
-                  </p>
-                </div>
-                <div>
-                  <h4 class="h4">Location</h4>
-                  <p>Lexington, Kentucky</p>
-                </div>
-                <div>
-                  <h4 class="h4">Business Type</h4>
-                  <p>Service-Disabled Veteran-Owned Small Business (SDVOSB)</p>
-                </div>
-                <div>
-                  <h4 class="h4">Response Time</h4>
-                  <p>Typically within two business days</p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
+        <Section title="Other contact methods">
+          <CardGrid>
+            <For each={contactMethods}>
+              {(method) => (
+                <Card title={method.title} chip={method.chip} actions={method.action}>
+                  {method.detail}
+                </Card>
+              )}
+            </For>
+          </CardGrid>
+        </Section>
+      </PageShell>
     </>
   )
 }

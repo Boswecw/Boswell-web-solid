@@ -2,8 +2,10 @@
 @import './styles/variables.css';
 @import './styles/animations.css';
 @import './styles/components.css';
+@import './styles/page-system.css';
 @import './styles/utilities.css';
 @import './styles/accessibility.css';
+@import './styles/home.css';
 
 /* Base Styles */
 * {
@@ -16,7 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-text);
-  background: var(--color-background);
+  background: var(--page-shell-bg);
   line-height: var(--line-height-normal);
 }
 

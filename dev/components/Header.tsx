@@ -51,11 +51,15 @@ export const Header: Component = () => {
   }
 
   return (
-    <header>
+    <header class="bg-[#0b0b0b] border-b border-white/10 opacity-100 mix-blend-normal">
       <div class="header-container">
         {/* Left: Boswell Digital Solutions logo (non-clickable branding) */}
         <div class="header-logo-left" role="img" aria-label="Boswell Digital Solutions">
-          <img src="/assets/sigicon.svg" alt="Boswell Digital Solutions" class="logo-img" />
+          <img
+            src="/assets/boswell-signature-gold.png"
+            alt="Boswell Digital Solutions signature"
+            class="logo-img logo-img--large"
+          />
         </div>
 
         {/* Center: Navigation links */}
@@ -98,7 +102,6 @@ export const Header: Component = () => {
         {/* Right: Forge Ecosystem icon with text (non-clickable branding) */}
         <div class="header-logo-right" role="img" aria-label="Forge Ecosystem">
           <img src="/assets/Forge_Ecosystem_icon.png" alt="Forge Ecosystem" class="forge-icon-img" />
-          <span class="forge-text">Forge</span>
         </div>
       </div>
     </header>

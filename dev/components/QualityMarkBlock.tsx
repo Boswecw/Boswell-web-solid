@@ -31,6 +31,10 @@ export const QualityMarkBlock: Component<QualityMarkBlockProps> = (props) => {
           The anvil is a promise. When it appears, the work has been checked, tested, and approved
           by a human before release.
         </p>
+        <p class="mb-md">
+          The mark signals that the work passed governed reviews, documentation, and acceptance checks,
+          ensuring it can be audited and maintained instead of being rushed out the door.
+        </p>
         <ul class="list-bulleted mb-md">
           <li>Defined rules and safety boundaries</li>
           <li>Tested instead of assumed</li>

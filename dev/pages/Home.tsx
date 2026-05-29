@@ -1,9 +1,34 @@
 import type { Component } from 'solid-js'
+import { For } from 'solid-js'
 import { META_CONFIG } from '../config/meta'
 import Seo from '../components/Seo'
 import JsonLd from '../components/JsonLd'
-import { Section } from '../components/Section'
-import { QualityMarkBlock } from '../components/QualityMarkBlock'
+
+const philosophyPoints = [
+  'Software as infrastructure, not marketing copy.',
+  'Understandable, auditable, maintainable systems.',
+  'AI is a tool, never an authority.',
+  'Human ownership and responsibility anchor every release.'
+]
+
+const pillarData = [
+  { title: 'Pressure', detail: 'Built for real-world constraints' },
+  { title: 'Craft', detail: 'Deliberate design over shortcuts' },
+  { title: 'Endurance', detail: 'Systems meant to last' }
+]
+
+const howWeBuildList = [
+  'Architecture before implementation',
+  'Governance and security from day one',
+  'Decisions documented, not guessed',
+  'AI-assisted, human-directed workflows',
+  'Long-term maintenance considered at design time'
+]
+
+const fitFilter = {
+  good: ['value clarity and ownership', 'long-term products/systems', 'maintainability matters'],
+  not: ['rush jobs without governance', '"just ship it" culture', 'AI-as-magic expectations']
+}
 
 const Home: Component = () => {
   return (
@@ -15,88 +40,87 @@ const Home: Component = () => {
         image={META_CONFIG.home.ogImage}
       />
       <JsonLd />
-      <main id="main">
-        <section class="hero">
-          <h1>Boswell Digital Solutions</h1>
-          <p class="text-xl font-medium mt-md">
-            A veteran-owned studio delivering governed software products and careful refactors.
-          </p>
-          <p class="text-lg text-muted mt-sm">
-            This site is the public trust surface for product status, boundaries, and contact.
-          </p>
+      <main id="main" class="home-shell">
+        <section class="home-hero" aria-labelledby="hero-heading">
+          <div class="home-hero__inner">
+            <img
+              class="home-hero__image"
+              src="/forge/assets/forge-wordmark.png"
+              alt="Forge wordmark"
+              loading="eager"
+            />
+            <div class="home-hero__text" id="hero-heading">
+              <p class="home-hero__tagline">Software built to endure real pressure.</p>
+              <a class="btn home-hero__cta" href="#how-we-work">
+                How We Work
+              </a>
+            </div>
+          </div>
+        </section>
+        <div class="home-hero-divider" aria-hidden="true"></div>
+
+        <section class="home-section" aria-labelledby="philosophy-heading">
+          <div class="home-section__wrapper">
+            <h2 id="philosophy-heading">The Philosophy</h2>
+            <div class="home-section__copy">
+              <For each={philosophyPoints}>{point => <p>{point}</p>}</For>
+            </div>
+          </div>
         </section>
 
-        <div class="container-center max-w-1280">
-          <QualityMarkBlock />
-          <Section
-            title="What we deliver"
-            subtitle="Bounded products and clear delivery commitments."
-          >
-            <div class="grid-2">
-              <div class="card">
-                <h4 class="h4">Product delivery</h4>
-                <p class="text-sm">
-                  Focused software tools with defined scope, documented boundaries, and
-                  conservative claims.
-                </p>
-              </div>
-              <div class="card">
-                <h4 class="h4">Governed refactors</h4>
-                <p class="text-sm">
-                  Structured refactoring work with clear stages, acceptance checks, and audit
-                  visibility.
-                </p>
-              </div>
-              <div class="card">
-                <h4 class="h4">Architecture reviews</h4>
-                <p class="text-sm">
-                  Practical guidance for teams that need a stable, defensible system direction.
-                </p>
-              </div>
-              <div class="card">
-                <h4 class="h4">Support and contact</h4>
-                <p class="text-sm">
-                  Direct access to the owner for scoped requests and product questions.
-                </p>
-              </div>
+        <section class="home-section home-section--border" aria-labelledby="anvil-heading">
+          <div class="home-section__wrapper">
+            <h2 id="anvil-heading">Why the Anvil</h2>
+            <div class="pillar-grid">
+              <For each={pillarData}>
+                {(pillar) => (
+                  <article class="pillar">
+                    <h3>{pillar.title}</h3>
+                    <p>{pillar.detail}</p>
+                  </article>
+                )}
+              </For>
             </div>
-          </Section>
+          </div>
+        </section>
 
-          <Section title="Current product focus" subtitle="Status is conservative and factual.">
-            <div class="card">
-              <p class="mb-md">
-                <strong>VibeForge 1.0</strong> is in active development. It is not finished and
-                will be refactored via Forge:SMITH.
-              </p>
-              <p class="mb-md">
-                This site is the authoritative reference for what the product does and does not
-                include.
-              </p>
-              <p class="mb-md">
-                Use the product page to review scope, boundaries, and current status.
-              </p>
-              <div class="text-center mt-lg">
-                <a href="/products/vibeforge">
-                  <button class="btn btn-outline">View VibeForge 1.0</button>
-                </a>
-              </div>
-            </div>
-          </Section>
+        <section class="home-section" aria-labelledby="how-we-build-heading" id="how-we-work">
+          <div class="home-section__wrapper">
+            <h2 id="how-we-build-heading">How We Build</h2>
+            <ul class="home-bullet-list">
+              <For each={howWeBuildList}>{step => <li>{step}</li>}</For>
+            </ul>
+          </div>
+        </section>
 
-          <Section title="Shop boundaries">
-            <div class="card">
-              <p class="mb-md">
-                The shop provides limited digital resources and services. It does not sell access
-                to internal systems or governance tooling.
-              </p>
-              <div class="text-center mt-lg">
-                <a href="/shop">
-                  <button class="btn btn-primary">Visit the shop</button>
-                </a>
+        <section class="home-section home-section--border" aria-labelledby="fit-filter-heading">
+          <div class="home-section__wrapper">
+            <h2 id="fit-filter-heading">Fit Filter</h2>
+            <div class="fit-grid">
+              <div>
+                <h3>Good Fit</h3>
+                <ul>
+                  <For each={fitFilter.good}>{item => <li>{item}</li>}</For>
+                </ul>
+              </div>
+              <div>
+                <h3>Not a Fit</h3>
+                <ul>
+                  <For each={fitFilter.not}>{item => <li>{item}</li>}</For>
+                </ul>
               </div>
             </div>
-          </Section>
-        </div>
+          </div>
+        </section>
+
+        <section class="closing-cta" aria-labelledby="closing-cta-heading">
+          <div class="closing-cta__wrapper">
+            <h2 id="closing-cta-heading">If you're looking for a development partner who treats software like infrastructure, not content, we should talk.</h2>
+            <a class="btn btn-outline closing-cta__cta" href="/contact">
+              Start a Conversation
+            </a>
+          </div>
+        </section>
       </main>
     </>
   )
